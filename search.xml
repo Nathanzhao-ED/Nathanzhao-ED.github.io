@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>汇编语言-DOSBox安装</title>
+      <link href="2021/07/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-DOSBox%E5%AE%89%E8%A3%85/"/>
+      <url>2021/07/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-DOSBox%E5%AE%89%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<p>在学习汇编的时候，需要用到debug调试程序，但是现在win10不支持在命令窗口中打开debug程序了.</p><p><strong>我们可以用Dosbox来运行debug</strong></p><h1 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h1><h2 id="1-DOSBox"><a href="#1-DOSBox" class="headerlink" title="1. DOSBox"></a>1. DOSBox</h2><p>下载地址：<em><a href="https://www.dosbox.com/">https://www.dosbox.com/</a></em></p><h2 id="2-debug-exe"><a href="#2-debug-exe" class="headerlink" title="2. debug.exe"></a>2. debug.exe</h2><p>链接：<a href="https://pan.baidu.com/s/12mdJN5TbkWY04rGBd3Hxxg">https://pan.baidu.com/s/12mdJN5TbkWY04rGBd3Hxxg</a><br>提取码：jb3a</p><h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><p><a href="https://imgtu.com/i/RR3COH"><img src="https://z3.ax1x.com/2021/07/03/RR3COH.png" alt="点击next"></a></p><p><a href="https://imgtu.com/i/RR3imd"><img src="https://z3.ax1x.com/2021/07/03/RR3imd.png" alt="选择路径，点击install"></a></p><p>[<img src="https://z3.ax1x.com/2021/07/03/RR3plD.png" alt="安装完成，close">](</p><p><strong>在安装目录D:\Debug\DOSBox-0.74-3,下，找到DOSBox 0.74-3 Options，双击进入配置</strong></p><p><a href="https://imgtu.com/i/RR3hBd"><img src="https://z3.ax1x.com/2021/07/03/RR3hBd.md.png" alt="RR3hBd.md.png"></a></p><p><strong>在文件最后添加如下代码</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MOUNT C D:\Debug</span><br><span class="line">C:</span><br><span class="line">debug</span><br><span class="line"># MOUNT是挂载，C是参数，D:\Debug是debug.exe存放的文件夹路径</span><br></pre></td></tr></table></figure><p><a href="https://imgtu.com/i/RR3F0A"><img src="https://z3.ax1x.com/2021/07/03/RR3F0A.png"></a></p><p><strong>启动DOSBox.exe，在光标处输入dds：0，结果如下所示即安装配置成功：</strong></p><p><a href="https://imgtu.com/i/RR396e"><img src="https://z3.ax1x.com/2021/07/03/RR396e.png"></a></p><p><a href="https://imgtu.com/i/RR3plD">https://imgtu.com/i/RR3plD</a>)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>汇编语言-实验1查看CPU和内存 用机器指令和汇编指令编程</title>
+      <link href="2021/07/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E5%AE%9E%E9%AA%8C1%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98-%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/"/>
+      <url>2021/07/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E5%AE%9E%E9%AA%8C1%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98-%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机组成原理-指令系统</title>
       <link href="2021/06/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"/>
       <url>2021/06/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</url>
