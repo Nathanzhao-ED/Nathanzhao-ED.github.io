@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Jdbc Template的sql执行方法</title>
+      <link href="2021/08/04/Jdbc-Template%E7%9A%84sql%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95/"/>
+      <url>2021/08/04/Jdbc-Template%E7%9A%84sql%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="使用JdbcTemplate的execute-方法执行SQL语句"><a href="#使用JdbcTemplate的execute-方法执行SQL语句" class="headerlink" title="使用JdbcTemplate的execute()方法执行SQL语句"></a>使用JdbcTemplate的execute()方法执行SQL语句</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.execute(<span class="string">&quot;CREATE TABLE USER (user_id integer, name varchar(100))&quot;</span>);</span><br></pre></td></tr></table></figure><h2 id="使用JdbcTemplate的update-方法执行SQL语句"><a href="#使用JdbcTemplate的update-方法执行SQL语句" class="headerlink" title="使用JdbcTemplate的update()方法执行SQL语句"></a>使用JdbcTemplate的update()方法执行SQL语句</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JdbcTemplate template = <span class="keyword">new</span> JdbcTemplate(JDBCUtils.getDataSource());</span><br><span class="line">String sql = <span class="string">&quot;insert into user (name,gender,age,address,qq,email) values(?,?,?,?,?,?)&quot;</span>;</span><br><span class="line">template.update(sql, user.getName(), user.getGender(), user.getAge(), user.getAddress(), user.getQq(), user.getEmail());</span><br></pre></td></tr></table></figure><blockquote><p>update可以带参数，而execute不可以</p><p>update背后是借助于Java.sql.PreparedStatement完成，而execute是基于java.sql.Statement</p><p>update返回int，即受影响的行数，execute返回void</p></blockquote><h2 id="查询时，使用queryForXXX-等方法"><a href="#查询时，使用queryForXXX-等方法" class="headerlink" title="查询时，使用queryForXXX()等方法"></a>查询时，使用queryForXXX()等方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User user = template.queryForObject(sql, <span class="keyword">new</span> BeanPropertyRowMapper&lt;User&gt;(User.class), username, password);</span><br><span class="line"><span class="keyword">int</span> count = jdbcTemplate.queryForInt(<span class="string">&quot;SELECT COUNT(*) FROM USER&quot;</span>); </span><br><span class="line">List rows = jdbcTemplate.queryForList(<span class="string">&quot;SELECT * FROM USER&quot;</span>); </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Druid的基本使用</title>
       <link href="2021/07/31/Druid%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
       <url>2021/07/31/Druid%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
