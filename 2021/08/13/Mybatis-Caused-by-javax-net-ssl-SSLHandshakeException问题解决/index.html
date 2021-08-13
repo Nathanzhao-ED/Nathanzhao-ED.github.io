@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决 | Peekaboo的个人网站 - Pekaboo's Personal Website</title><meta name="author" content="Pekaboo"><meta name="copyright" content="Pekaboo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="12345678910111213141516171819202122&#x2F;&#x2F;mybatis-conf.xml&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE configuration        PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Config 3.0&#x2F;&#x2F;EN&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决">
+<meta property="og:url" content="http://example.com/2021/08/13/Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.html">
+<meta property="og:site_name" content="Peekaboo的个人网站 - Pekaboo&#39;s Personal Website">
+<meta property="og:description" content="12345678910111213141516171819202122&#x2F;&#x2F;mybatis-conf.xml&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE configuration        PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Config 3.0&#x2F;&#x2F;EN&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/Nathan-zhao/clouding/raw/master/20210813223551.jpg">
+<meta property="article:published_time" content="2021-08-13T14:29:47.000Z">
+<meta property="article:modified_time" content="2021-08-13T14:37:21.548Z">
+<meta property="article:author" content="Pekaboo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Nathan-zhao/clouding/raw/master/20210813223551.jpg"><link rel="shortcut icon" href="/img/plane.png"><link rel="canonical" href="http://example.com/2021/08/13/Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-08-13 22:37:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><style type="text/css">.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{left:-66px!important}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover{left:0!important}</style><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.loli.net/2021/04/26/TZkfuYwCpMGy9qg.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Music"><i class="fa-fw /music/"></i><span> 0</span></a></li><li><a class="site-page child" href="/Movie"><i class="fa-fw /movies/"></i><span> 1</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/Nathan-zhao/clouding/raw/master/20210813223551.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Peekaboo的个人网站 - Pekaboo's Personal Website</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Music"><i class="fa-fw /music/"></i><span> 0</span></a></li><li><a class="site-page child" href="/Movie"><i class="fa-fw /movies/"></i><span> 1</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-13T14:29:47.000Z" title="Created 2021-08-13 22:29:47">2021-08-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-08-13T14:37:21.548Z" title="Updated 2021-08-13 22:37:21">2021-08-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>10min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//mybatis-conf.xml</span><br><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;JDBC&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/mybatis?useSSL=true<span class="symbol">&amp;amp;</span>useUnicode=true<span class="symbol">&amp;amp;</span>characterEncoding=utf8&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;13&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--   每一个mapper.xml都需要在mybatis.xml中注册     --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">&quot;top/zjt/dao/UserMapper.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//日志信息</span></span><br><span class="line">D:\Java\Jdk-<span class="number">1.8</span>\bin\java.exe -ea -Didea.test.cyclic.buffer.size=<span class="number">1048576</span> <span class="string">&quot;-javaagent:D:\JetBrains\IntelliJ IDEA 2021.2\lib\idea_rt.jar=58975:D:\JetBrains\IntelliJ IDEA 2021.2\bin&quot;</span> -Dfile.encoding=UTF-<span class="number">8</span> -classpath <span class="string">&quot;D:\JetBrains\IntelliJ IDEA 2021.2\lib\idea_rt.jar;D:\JetBrains\IntelliJ IDEA 2021.2\plugins\junit\lib\junit5-rt.jar;D:\JetBrains\IntelliJ IDEA 2021.2\plugins\junit\lib\junit-rt.jar;D:\Java\Jdk-1.8\jre\lib\charsets.jar;D:\Java\Jdk-1.8\jre\lib\deploy.jar;D:\Java\Jdk-1.8\jre\lib\ext\access-bridge-32.jar;D:\Java\Jdk-1.8\jre\lib\ext\cldrdata.jar;D:\Java\Jdk-1.8\jre\lib\ext\dnsns.jar;D:\Java\Jdk-1.8\jre\lib\ext\jaccess.jar;D:\Java\Jdk-1.8\jre\lib\ext\jfxrt.jar;D:\Java\Jdk-1.8\jre\lib\ext\localedata.jar;D:\Java\Jdk-1.8\jre\lib\ext\nashorn.jar;D:\Java\Jdk-1.8\jre\lib\ext\sunec.jar;D:\Java\Jdk-1.8\jre\lib\ext\sunjce_provider.jar;D:\Java\Jdk-1.8\jre\lib\ext\sunmscapi.jar;D:\Java\Jdk-1.8\jre\lib\ext\sunpkcs11.jar;D:\Java\Jdk-1.8\jre\lib\ext\zipfs.jar;D:\Java\Jdk-1.8\jre\lib\javaws.jar;D:\Java\Jdk-1.8\jre\lib\jce.jar;D:\Java\Jdk-1.8\jre\lib\jfr.jar;D:\Java\Jdk-1.8\jre\lib\jfxswt.jar;D:\Java\Jdk-1.8\jre\lib\jsse.jar;D:\Java\Jdk-1.8\jre\lib\management-agent.jar;D:\Java\Jdk-1.8\jre\lib\plugin.jar;D:\Java\Jdk-1.8\jre\lib\resources.jar;D:\Java\Jdk-1.8\jre\lib\rt.jar;D:\JavaCode\Mybatis-study\mybatis-01\target\test-classes;D:\JavaCode\Mybatis-study\mybatis-01\target\classes;D:\apache-maven-3.6.1-bin\apache-maven-3.6.1-repo\junit\junit\4.13\junit-4.13.jar;D:\apache-maven-3.6.1-bin\apache-maven-3.6.1-repo\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;D:\apache-maven-3.6.1-bin\apache-maven-3.6.1-repo\mysql\mysql-connector-java\5.1.47\mysql-connector-java-5.1.47.jar;D:\apache-maven-3.6.1-bin\apache-maven-3.6.1-repo\org\mybatis\mybatis\3.5.2\mybatis-3.5.2.jar&quot;</span> com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit4 top.zjt.dao.UserDaoTest,getUserListTest</span><br><span class="line"></span><br><span class="line">org.apache.ibatis.exceptions.PersistenceException: </span><br><span class="line">### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</span><br><span class="line"></span><br><span class="line">The last packet successfully received from the server was <span class="number">973</span> milliseconds ago.  The last packet sent successfully to the server was <span class="number">968</span> milliseconds ago.</span><br><span class="line">### The error may exist in top/zjt/dao/UserMapper.xml</span><br><span class="line">### The error may involve top.zjt.dao.UserDao.getUserList</span><br><span class="line">### The error occurred while executing a query</span><br><span class="line">### Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</span><br><span class="line"></span><br><span class="line">The last packet successfully received from the server was <span class="number">973</span> milliseconds ago.  The last packet sent successfully to the server was <span class="number">968</span> milliseconds ago.</span><br><span class="line"></span><br><span class="line">	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:<span class="number">30</span>)</span><br><span class="line">	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:<span class="number">149</span>)</span><br><span class="line">	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:<span class="number">140</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:<span class="number">147</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:<span class="number">80</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:<span class="number">57</span>)</span><br><span class="line">	at com.sun.proxy.$Proxy4.getUserList(Unknown Source)</span><br><span class="line">	at top.zjt.dao.UserDaoTest.getUserListTest(UserDaoTest.java:<span class="number">16</span>)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:<span class="number">62</span>)</span><br><span class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:<span class="number">43</span>)</span><br><span class="line">	at java.lang.reflect.Method.invoke(Method.java:<span class="number">498</span>)</span><br><span class="line">	at org.junit.runners.model.FrameworkMethod$<span class="number">1.</span>runReflectiveCall(FrameworkMethod.java:<span class="number">59</span>)</span><br><span class="line">	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:<span class="number">12</span>)</span><br><span class="line">	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:<span class="number">56</span>)</span><br><span class="line">	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:<span class="number">17</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">3.</span>evaluate(ParentRunner.java:<span class="number">306</span>)</span><br><span class="line">	at org.junit.runners.BlockJUnit4ClassRunner$<span class="number">1.</span>evaluate(BlockJUnit4ClassRunner.java:<span class="number">100</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:<span class="number">366</span>)</span><br><span class="line">	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:<span class="number">103</span>)</span><br><span class="line">	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:<span class="number">63</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">4.</span>run(ParentRunner.java:<span class="number">331</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">1.</span>schedule(ParentRunner.java:<span class="number">79</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:<span class="number">329</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.access$<span class="number">100</span>(ParentRunner.java:<span class="number">66</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">2.</span>evaluate(ParentRunner.java:<span class="number">293</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">3.</span>evaluate(ParentRunner.java:<span class="number">306</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.run(ParentRunner.java:<span class="number">413</span>)</span><br><span class="line">	at org.junit.runner.JUnitCore.run(JUnitCore.java:<span class="number">137</span>)</span><br><span class="line">	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:<span class="number">69</span>)</span><br><span class="line">	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:<span class="number">33</span>)</span><br><span class="line">	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:<span class="number">235</span>)</span><br><span class="line">	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:<span class="number">54</span>)</span><br><span class="line">Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</span><br><span class="line"></span><br><span class="line">The last packet successfully received from the server was <span class="number">973</span> milliseconds ago.  The last packet sent successfully to the server was <span class="number">968</span> milliseconds ago.</span><br><span class="line">	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</span><br><span class="line">	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:<span class="number">62</span>)</span><br><span class="line">	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:<span class="number">45</span>)</span><br><span class="line">	at java.lang.reflect.Constructor.newInstance(Constructor.java:<span class="number">423</span>)</span><br><span class="line">	at com.mysql.jdbc.Util.handleNewInstance(Util.java:<span class="number">425</span>)</span><br><span class="line">	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:<span class="number">990</span>)</span><br><span class="line">	at com.mysql.jdbc.ExportControlled.transformSocketToSSLSocket(ExportControlled.java:<span class="number">201</span>)</span><br><span class="line">	at com.mysql.jdbc.MysqlIO.negotiateSSLConnection(MysqlIO.java:<span class="number">4914</span>)</span><br><span class="line">	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:<span class="number">1663</span>)</span><br><span class="line">	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:<span class="number">1224</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:<span class="number">2199</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:<span class="number">2230</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:<span class="number">2025</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.&lt;init&gt;(ConnectionImpl.java:<span class="number">778</span>)</span><br><span class="line">	at com.mysql.jdbc.JDBC4Connection.&lt;init&gt;(JDBC4Connection.java:<span class="number">47</span>)</span><br><span class="line">	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</span><br><span class="line">	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:<span class="number">62</span>)</span><br><span class="line">	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:<span class="number">45</span>)</span><br><span class="line">	at java.lang.reflect.Constructor.newInstance(Constructor.java:<span class="number">423</span>)</span><br><span class="line">	at com.mysql.jdbc.Util.handleNewInstance(Util.java:<span class="number">425</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:<span class="number">386</span>)</span><br><span class="line">	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:<span class="number">330</span>)</span><br><span class="line">	at java.sql.DriverManager.getConnection(DriverManager.java:<span class="number">664</span>)</span><br><span class="line">	at java.sql.DriverManager.getConnection(DriverManager.java:<span class="number">208</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:<span class="number">221</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:<span class="number">216</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:<span class="number">95</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:<span class="number">422</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:<span class="number">89</span>)</span><br><span class="line">	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:<span class="number">138</span>)</span><br><span class="line">	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:<span class="number">60</span>)</span><br><span class="line">	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:<span class="number">336</span>)</span><br><span class="line">	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:<span class="number">85</span>)</span><br><span class="line">	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:<span class="number">62</span>)</span><br><span class="line">	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:<span class="number">324</span>)</span><br><span class="line">	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:<span class="number">156</span>)</span><br><span class="line">	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:<span class="number">109</span>)</span><br><span class="line">	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:<span class="number">83</span>)</span><br><span class="line">	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:<span class="number">147</span>)</span><br><span class="line">	... <span class="number">31</span> more</span><br><span class="line">Caused by: javax.net.ssl.SSLHandshakeException: <span class="function">No appropriate <span class="title">protocol</span> <span class="params">(protocol is disabled or cipher suites are inappropriate)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.HandshakeContext.&lt;init&gt;<span class="params">(HandshakeContext.java:<span class="number">171</span>)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.ClientHandshakeContext.&lt;init&gt;<span class="params">(ClientHandshakeContext.java:<span class="number">101</span>)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.TransportContext.<span class="title">kickstart</span><span class="params">(TransportContext.java:<span class="number">238</span>)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.SSLSocketImpl.<span class="title">startHandshake</span><span class="params">(SSLSocketImpl.java:<span class="number">394</span>)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.SSLSocketImpl.<span class="title">startHandshake</span><span class="params">(SSLSocketImpl.java:<span class="number">373</span>)</span></span></span><br><span class="line"><span class="function">	at com.mysql.jdbc.ExportControlled.<span class="title">transformSocketToSSLSocket</span><span class="params">(ExportControlled.java:<span class="number">186</span>)</span></span></span><br><span class="line"><span class="function">	... 63 more</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Process finished with exit code -1</span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//修改</span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/mybatis?useSSL=false<span class="symbol">&amp;amp;</span>useUnicode=true<span class="symbol">&amp;amp;</span>characterEncoding=utf8&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>MySQL在高版本需要指明是否进行SSL连接</p>
+<blockquote>
+<p>   SSL协议提供服务主要：<br>       1）认证用户服务器，确保数据发送到正确的服务器； 　　 .<br>       2）加密数据，防止数据传输途中被窃取使用；<br>       3）维护数据完整性，验证数据在传输过程中是否丢失；</p>
+<p>   当前支持SSL协议两层：<br>            SSL记录协议（SSL Record Protocol）：建立靠传输协议（TCP）高层协议提供数据封装、压缩、加密等基本功能支持<br>        SSL握手协议（SSL Handshake Protocol）：建立SSL记录协议用于实际数据传输始前通讯双进行身份认证、协商加密<br>        算法、 交换加密密钥等。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Pekaboo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/13/Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">http://example.com/2021/08/13/Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException问题解决/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://nathanzhao-ed.github.io/">GitHub</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/Nathan-zhao/clouding/raw/master/20210813223551.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="Alipay"/></a><div class="post-qr-code-desc">Alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/11/ObjectMapper%E4%B8%ADwriteVaule%E5%92%8CwriteValueAsString%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/"><img class="next-cover" src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210811211850.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">ObjectMapper中writeVaule和writeValueAsString方法的区别</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2021/04/26/TZkfuYwCpMGy9qg.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Pekaboo</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Nathanzhao-ED"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:2438968920@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://message/?uin=2438968920" target="_blank" title="QQ:2438968920"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://weibo.com/u/5266171796" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content"> <center>'    Sharing Code and Photos      ' </div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/13/Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决"><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210813223551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决"/></a><div class="content"><a class="title" href="/2021/08/13/Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决">Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决</a><time datetime="2021-08-13T14:29:47.000Z" title="Created 2021-08-13 22:29:47">2021-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/11/ObjectMapper%E4%B8%ADwriteVaule%E5%92%8CwriteValueAsString%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/" title="ObjectMapper中writeVaule和writeValueAsString方法的区别"><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210811211850.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ObjectMapper中writeVaule和writeValueAsString方法的区别"/></a><div class="content"><a class="title" href="/2021/08/11/ObjectMapper%E4%B8%ADwriteVaule%E5%92%8CwriteValueAsString%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/" title="ObjectMapper中writeVaule和writeValueAsString方法的区别">ObjectMapper中writeVaule和writeValueAsString方法的区别</a><time datetime="2021-08-11T13:01:20.000Z" title="Created 2021-08-11 21:01:20">2021-08-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/10/Java%E5%8F%8D%E5%B0%84/" title="Java反射"><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210811133046.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java反射"/></a><div class="content"><a class="title" href="/2021/08/10/Java%E5%8F%8D%E5%B0%84/" title="Java反射">Java反射</a><time datetime="2021-08-10T13:11:00.000Z" title="Created 2021-08-10 21:11:00">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/05/%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8/" title="转发和重定向的区别和使用"><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210805162608.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="转发和重定向的区别和使用"/></a><div class="content"><a class="title" href="/2021/08/05/%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8/" title="转发和重定向的区别和使用">转发和重定向的区别和使用</a><time datetime="2021-08-05T08:09:44.000Z" title="Created 2021-08-05 16:09:44">2021-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/04/Jdbc-Template%E7%9A%84sql%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95/" title="Jdbc Template的sql执行方法"><img src="https://gitee.com/nathan-zhao/clouding/raw/master/20210804200047.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jdbc Template的sql执行方法"/></a><div class="content"><a class="title" href="/2021/08/04/Jdbc-Template%E7%9A%84sql%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95/" title="Jdbc Template的sql执行方法">Jdbc Template的sql执行方法</a><time datetime="2021-08-04T11:57:05.000Z" title="Created 2021-08-04 19:57:05">2021-08-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By ♥  Pekaboo</div><div class="framework-info"><span>From Chengdu University of Information Technology </span><span class="footer-separator">|</span><span>My </span><a target="_blank" rel="noopener" href="https://github.com/Nathanzhao-ED/">GitHub</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="Increase font size"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="Decrease font size"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">简</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'PG0yvL39zc2cGAPmItHR7crH-gzGzoHsz',
+      appKey: 'kIJBERRnHN9e6xCnBo5KE2bg',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-lrcType="1" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="255,255,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
