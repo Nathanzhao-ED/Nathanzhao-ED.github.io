@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Mybatis中的#{}和${}符号的区别</title>
+      <link href="2021/08/15/Mybatis%E4%B8%AD%E7%9A%84#%7B%7D%E5%92%8C$%7B%7D%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>2021/08/15/Mybatis%E4%B8%AD%E7%9A%84#%7B%7D%E5%92%8C$%7B%7D%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>#{}是预编译处理，${}是字符串替换。</p></li><li><p>Mybatis 在处理#{}时，会将 sql 中的#{}替换为?号，调用 PreparedStatement 的 set 方法来赋值；</p></li><li><p>Mybatis 在处理${}时，就是把${}替换成变量的值。</p></li><li><p>使用#{}可以有效的防止 SQL 注入，提高系统安全性。</p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LOG4J配置文件</title>
       <link href="2021/08/14/LOG4J%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
       <url>2021/08/14/LOG4J%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
