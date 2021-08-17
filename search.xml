@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>test</title>
+      <link href="2021/08/17/test/"/>
+      <url>2021/08/17/test/</url>
+      
+        <content type="html"><![CDATA[<p>123312</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> photos </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring依赖注入DI的方式</title>
       <link href="2021/08/17/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI%E7%9A%84%E6%96%B9%E5%BC%8F/"/>
       <url>2021/08/17/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI%E7%9A%84%E6%96%B9%E5%BC%8F/</url>
