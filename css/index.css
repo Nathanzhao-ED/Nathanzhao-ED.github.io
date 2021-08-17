@@ -2459,7 +2459,7 @@ blockquote footer cite:before {
   margin: 0 0.2rem 0 0;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta-label {
-  display: none;
+  padding-right: 0.2rem;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta__separator {
   margin: 0 0.3rem;
@@ -4150,7 +4150,7 @@ blockquote footer cite:before {
 #rightside {
   position: fixed;
   right: -38px;
-  bottom: 80px;
+  bottom: 40px;
   z-index: 100;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
