@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决 | Peekaboo的个人网站 - Pekaboo&#39;s Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="12345678910111213141516171819202122&#x2F;&#x2F;mybatis-conf.xml&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE configuration        PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Config 3.0&#x2F;&#x2F;EN&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决">
+<meta property="og:url" content="http://example.com/2021/08/13/Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.html">
+<meta property="og:site_name" content="Peekaboo的个人网站 - Pekaboo&#39;s Personal Website">
+<meta property="og:description" content="12345678910111213141516171819202122&#x2F;&#x2F;mybatis-conf.xml&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;&lt;!DOCTYPE configuration        PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Config 3.0&#x2F;&#x2F;EN&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-13T14:29:47.000Z">
+<meta property="article:modified_time" content="2021-08-15T13:58:13.138Z">
+<meta property="article:author" content="Pekaboo">
+<meta property="article:tag" content="Mybatis">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Peekaboo的个人网站 - Pekaboo's Personal Website" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Peekaboo的个人网站 - Pekaboo&#39;s Personal Website</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Because deeply loves, therefore rigid!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException问题解决" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/13/Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="article-date">
+  <time class="dt-published" datetime="2021-08-13T14:29:47.000Z" itemprop="datePublished">2021-08-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//mybatis-conf.xml</span><br><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;JDBC&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/mybatis?useSSL=true<span class="symbol">&amp;amp;</span>useUnicode=true<span class="symbol">&amp;amp;</span>characterEncoding=utf8&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;13&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--   每一个mapper.xml都需要在mybatis.xml中注册     --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">&quot;top/zjt/dao/UserMapper.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//日志信息</span></span><br><span class="line">D:\Java\Jdk-<span class="number">1.8</span>\bin\java.exe -ea -Didea.test.cyclic.buffer.size=<span class="number">1048576</span> <span class="string">&quot;-javaagent:D:\JetBrains\IntelliJ IDEA 2021.2\lib\idea_rt.jar=58975:D:\JetBrains\IntelliJ IDEA 2021.2\bin&quot;</span> -Dfile.encoding=UTF-<span class="number">8</span> -classpath <span class="string">&quot;D:\JetBrains\IntelliJ IDEA 2021.2\lib\idea_rt.jar;D:\JetBrains\IntelliJ IDEA 2021.2\plugins\junit\lib\junit5-rt.jar;D:\JetBrains\IntelliJ IDEA 2021.2\plugins\junit\lib\junit-rt.jar;D:\Java\Jdk-1.8\jre\lib\charsets.jar;D:\Java\Jdk-1.8\jre\lib\deploy.jar;D:\Java\Jdk-1.8\jre\lib\ext\access-bridge-32.jar;D:\Java\Jdk-1.8\jre\lib\ext\cldrdata.jar;D:\Java\Jdk-1.8\jre\lib\ext\dnsns.jar;D:\Java\Jdk-1.8\jre\lib\ext\jaccess.jar;D:\Java\Jdk-1.8\jre\lib\ext\jfxrt.jar;D:\Java\Jdk-1.8\jre\lib\ext\localedata.jar;D:\Java\Jdk-1.8\jre\lib\ext\nashorn.jar;D:\Java\Jdk-1.8\jre\lib\ext\sunec.jar;D:\Java\Jdk-1.8\jre\lib\ext\sunjce_provider.jar;D:\Java\Jdk-1.8\jre\lib\ext\sunmscapi.jar;D:\Java\Jdk-1.8\jre\lib\ext\sunpkcs11.jar;D:\Java\Jdk-1.8\jre\lib\ext\zipfs.jar;D:\Java\Jdk-1.8\jre\lib\javaws.jar;D:\Java\Jdk-1.8\jre\lib\jce.jar;D:\Java\Jdk-1.8\jre\lib\jfr.jar;D:\Java\Jdk-1.8\jre\lib\jfxswt.jar;D:\Java\Jdk-1.8\jre\lib\jsse.jar;D:\Java\Jdk-1.8\jre\lib\management-agent.jar;D:\Java\Jdk-1.8\jre\lib\plugin.jar;D:\Java\Jdk-1.8\jre\lib\resources.jar;D:\Java\Jdk-1.8\jre\lib\rt.jar;D:\JavaCode\Mybatis-study\mybatis-01\target\test-classes;D:\JavaCode\Mybatis-study\mybatis-01\target\classes;D:\apache-maven-3.6.1-bin\apache-maven-3.6.1-repo\junit\junit\4.13\junit-4.13.jar;D:\apache-maven-3.6.1-bin\apache-maven-3.6.1-repo\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;D:\apache-maven-3.6.1-bin\apache-maven-3.6.1-repo\mysql\mysql-connector-java\5.1.47\mysql-connector-java-5.1.47.jar;D:\apache-maven-3.6.1-bin\apache-maven-3.6.1-repo\org\mybatis\mybatis\3.5.2\mybatis-3.5.2.jar&quot;</span> com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit4 top.zjt.dao.UserDaoTest,getUserListTest</span><br><span class="line"></span><br><span class="line">org.apache.ibatis.exceptions.PersistenceException: </span><br><span class="line">### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</span><br><span class="line"></span><br><span class="line">The last packet successfully received from the server was <span class="number">973</span> milliseconds ago.  The last packet sent successfully to the server was <span class="number">968</span> milliseconds ago.</span><br><span class="line">### The error may exist in top/zjt/dao/UserMapper.xml</span><br><span class="line">### The error may involve top.zjt.dao.UserDao.getUserList</span><br><span class="line">### The error occurred while executing a query</span><br><span class="line">### Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</span><br><span class="line"></span><br><span class="line">The last packet successfully received from the server was <span class="number">973</span> milliseconds ago.  The last packet sent successfully to the server was <span class="number">968</span> milliseconds ago.</span><br><span class="line"></span><br><span class="line">	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:<span class="number">30</span>)</span><br><span class="line">	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:<span class="number">149</span>)</span><br><span class="line">	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:<span class="number">140</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:<span class="number">147</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:<span class="number">80</span>)</span><br><span class="line">	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:<span class="number">57</span>)</span><br><span class="line">	at com.sun.proxy.$Proxy4.getUserList(Unknown Source)</span><br><span class="line">	at top.zjt.dao.UserDaoTest.getUserListTest(UserDaoTest.java:<span class="number">16</span>)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:<span class="number">62</span>)</span><br><span class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:<span class="number">43</span>)</span><br><span class="line">	at java.lang.reflect.Method.invoke(Method.java:<span class="number">498</span>)</span><br><span class="line">	at org.junit.runners.model.FrameworkMethod$<span class="number">1.</span>runReflectiveCall(FrameworkMethod.java:<span class="number">59</span>)</span><br><span class="line">	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:<span class="number">12</span>)</span><br><span class="line">	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:<span class="number">56</span>)</span><br><span class="line">	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:<span class="number">17</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">3.</span>evaluate(ParentRunner.java:<span class="number">306</span>)</span><br><span class="line">	at org.junit.runners.BlockJUnit4ClassRunner$<span class="number">1.</span>evaluate(BlockJUnit4ClassRunner.java:<span class="number">100</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:<span class="number">366</span>)</span><br><span class="line">	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:<span class="number">103</span>)</span><br><span class="line">	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:<span class="number">63</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">4.</span>run(ParentRunner.java:<span class="number">331</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">1.</span>schedule(ParentRunner.java:<span class="number">79</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:<span class="number">329</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.access$<span class="number">100</span>(ParentRunner.java:<span class="number">66</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">2.</span>evaluate(ParentRunner.java:<span class="number">293</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner$<span class="number">3.</span>evaluate(ParentRunner.java:<span class="number">306</span>)</span><br><span class="line">	at org.junit.runners.ParentRunner.run(ParentRunner.java:<span class="number">413</span>)</span><br><span class="line">	at org.junit.runner.JUnitCore.run(JUnitCore.java:<span class="number">137</span>)</span><br><span class="line">	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:<span class="number">69</span>)</span><br><span class="line">	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:<span class="number">33</span>)</span><br><span class="line">	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:<span class="number">235</span>)</span><br><span class="line">	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:<span class="number">54</span>)</span><br><span class="line">Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</span><br><span class="line"></span><br><span class="line">The last packet successfully received from the server was <span class="number">973</span> milliseconds ago.  The last packet sent successfully to the server was <span class="number">968</span> milliseconds ago.</span><br><span class="line">	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</span><br><span class="line">	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:<span class="number">62</span>)</span><br><span class="line">	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:<span class="number">45</span>)</span><br><span class="line">	at java.lang.reflect.Constructor.newInstance(Constructor.java:<span class="number">423</span>)</span><br><span class="line">	at com.mysql.jdbc.Util.handleNewInstance(Util.java:<span class="number">425</span>)</span><br><span class="line">	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:<span class="number">990</span>)</span><br><span class="line">	at com.mysql.jdbc.ExportControlled.transformSocketToSSLSocket(ExportControlled.java:<span class="number">201</span>)</span><br><span class="line">	at com.mysql.jdbc.MysqlIO.negotiateSSLConnection(MysqlIO.java:<span class="number">4914</span>)</span><br><span class="line">	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:<span class="number">1663</span>)</span><br><span class="line">	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:<span class="number">1224</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:<span class="number">2199</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:<span class="number">2230</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:<span class="number">2025</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.&lt;init&gt;(ConnectionImpl.java:<span class="number">778</span>)</span><br><span class="line">	at com.mysql.jdbc.JDBC4Connection.&lt;init&gt;(JDBC4Connection.java:<span class="number">47</span>)</span><br><span class="line">	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</span><br><span class="line">	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:<span class="number">62</span>)</span><br><span class="line">	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:<span class="number">45</span>)</span><br><span class="line">	at java.lang.reflect.Constructor.newInstance(Constructor.java:<span class="number">423</span>)</span><br><span class="line">	at com.mysql.jdbc.Util.handleNewInstance(Util.java:<span class="number">425</span>)</span><br><span class="line">	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:<span class="number">386</span>)</span><br><span class="line">	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:<span class="number">330</span>)</span><br><span class="line">	at java.sql.DriverManager.getConnection(DriverManager.java:<span class="number">664</span>)</span><br><span class="line">	at java.sql.DriverManager.getConnection(DriverManager.java:<span class="number">208</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:<span class="number">221</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:<span class="number">216</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:<span class="number">95</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:<span class="number">422</span>)</span><br><span class="line">	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:<span class="number">89</span>)</span><br><span class="line">	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:<span class="number">138</span>)</span><br><span class="line">	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:<span class="number">60</span>)</span><br><span class="line">	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:<span class="number">336</span>)</span><br><span class="line">	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:<span class="number">85</span>)</span><br><span class="line">	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:<span class="number">62</span>)</span><br><span class="line">	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:<span class="number">324</span>)</span><br><span class="line">	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:<span class="number">156</span>)</span><br><span class="line">	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:<span class="number">109</span>)</span><br><span class="line">	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:<span class="number">83</span>)</span><br><span class="line">	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:<span class="number">147</span>)</span><br><span class="line">	... <span class="number">31</span> more</span><br><span class="line">Caused by: javax.net.ssl.SSLHandshakeException: <span class="function">No appropriate <span class="title">protocol</span> <span class="params">(protocol is disabled or cipher suites are inappropriate)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.HandshakeContext.&lt;init&gt;<span class="params">(HandshakeContext.java:<span class="number">171</span>)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.ClientHandshakeContext.&lt;init&gt;<span class="params">(ClientHandshakeContext.java:<span class="number">101</span>)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.TransportContext.<span class="title">kickstart</span><span class="params">(TransportContext.java:<span class="number">238</span>)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.SSLSocketImpl.<span class="title">startHandshake</span><span class="params">(SSLSocketImpl.java:<span class="number">394</span>)</span></span></span><br><span class="line"><span class="function">	at sun.security.ssl.SSLSocketImpl.<span class="title">startHandshake</span><span class="params">(SSLSocketImpl.java:<span class="number">373</span>)</span></span></span><br><span class="line"><span class="function">	at com.mysql.jdbc.ExportControlled.<span class="title">transformSocketToSSLSocket</span><span class="params">(ExportControlled.java:<span class="number">186</span>)</span></span></span><br><span class="line"><span class="function">	... 63 more</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Process finished with exit code -1</span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//修改</span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/mybatis?useSSL=false<span class="symbol">&amp;amp;</span>useUnicode=true<span class="symbol">&amp;amp;</span>characterEncoding=utf8&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>MySQL在高版本需要指明是否进行SSL连接</p>
+<blockquote>
+<p>   SSL协议提供服务主要：<br>       1）认证用户服务器，确保数据发送到正确的服务器； 　　 .<br>       2）加密数据，防止数据传输途中被窃取使用；<br>       3）维护数据完整性，验证数据在传输过程中是否丢失；</p>
+<p>   当前支持SSL协议两层：<br>            SSL记录协议（SSL Record Protocol）：建立靠传输协议（TCP）高层协议提供数据封装、压缩、加密等基本功能支持<br>        SSL握手协议（SSL Handshake Protocol）：建立SSL记录协议用于实际数据传输始前通讯双进行身份认证、协商加密<br>        算法、 交换加密密钥等。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/13/Mybatis-Caused-by-javax-net-ssl-SSLHandshakeException%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" data-id="cksfytye0000ewkvj7t2uewin" data-title="Mybatis:Caused by: javax.net.ssl.SSLHandshakeException问题解决" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/08/14/LOG4J%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          LOG4J配置文件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/08/11/ObjectMapper%E4%B8%ADwriteVaule%E5%92%8CwriteValueAsString%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ObjectMapper中writeVaule和writeValueAsString方法的区别</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag">摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" rel="tag">汇编语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mybatis/" style="font-size: 20px;">Mybatis</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 10px;">摄影</a> <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" style="font-size: 13.33px;">汇编语言</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 16.67px;">计算机组成原理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/08/17/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI%E7%9A%84%E6%96%B9%E5%BC%8F/">Spring依赖注入DI的方式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/Mybatis%E5%8A%A8%E6%80%81sql/">Mybatis动态sql</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/Mybatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2/">Mybatis一对多和多对一关联查询</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/Mybatis%E4%B8%AD%E7%9A%84#%7B%7D%E5%92%8C$%7B%7D%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/">Mybatis中的#{}和${}符号的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/14/LOG4J%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">LOG4J配置文件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Pekaboo<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

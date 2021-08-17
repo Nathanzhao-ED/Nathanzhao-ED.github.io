@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Mysql常用命令 | Peekaboo的个人网站 - Pekaboo&#39;s Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="用户创建新用户1CREATE USER &#39;username&#39;@&#39;host&#39; IDENTIFIED BY &#39;password&#39;;     例子:   ​             CREATE USER ‘zjt’@’localhost’ IDENTIFIED BY ‘13’; ​             CREATE USER ‘zjt’@’192.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql常用命令">
+<meta property="og:url" content="http://example.com/2021/07/21/Mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Peekaboo的个人网站 - Pekaboo&#39;s Personal Website">
+<meta property="og:description" content="用户创建新用户1CREATE USER &#39;username&#39;@&#39;host&#39; IDENTIFIED BY &#39;password&#39;;     例子:   ​             CREATE USER ‘zjt’@’localhost’ IDENTIFIED BY ‘13’; ​             CREATE USER ‘zjt’@’192.1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-21T02:16:23.000Z">
+<meta property="article:modified_time" content="2021-07-21T08:53:05.428Z">
+<meta property="article:author" content="Pekaboo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Peekaboo的个人网站 - Pekaboo's Personal Website" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Peekaboo的个人网站 - Pekaboo&#39;s Personal Website</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Because deeply loves, therefore rigid!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Mysql常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/21/Mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2021-07-21T02:16:23.000Z" itemprop="datePublished">2021-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Mysql常用命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h1><h2 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &#39;username&#39;@&#39;host&#39; IDENTIFIED BY &#39;password&#39;;</span><br></pre></td></tr></table></figure>
+
+<p>   例子: </p>
+<blockquote>
+<p>​             CREATE USER ‘zjt’@’localhost’ IDENTIFIED BY ‘13’;</p>
+<p>​             CREATE USER ‘zjt’@’192.168.1.108’ IDENDIFIED BY ‘13’;</p>
+<p>​             CREATE USER ‘zjt’@’%’ IDENTIFIED BY ‘13’;</p>
+<p>​             CREATE USER ‘zjt’@’%’ IDENTIFIED BY ‘’;</p>
+<p>​             CREATE USER ‘zjt’@’%’;</p>
+</blockquote>
+<p><strong>实例1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create user zhaojunting; </span><br></pre></td></tr></table></figure>
+
+<p>​    这样创建的用户，可以从任意安装了<code>mysql客户端</code>，并<code>能够访问目标服务器</code>的机器上创建连接，无须密码.例如，从ip:10.0.0.99的客户端执行连接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uzhaojunting -h localhost</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select user,host,password from user where user&#x3D;&#39;zhaojunting&#39;;	&#x2F;&#x2F;查看该用户</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select user();    &#x2F;&#x2F;显示当前用户</span><br></pre></td></tr></table></figure>
+
+<p><strong>实例2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create user zhaojunting_ps identified by &#39;13&#39;;	&#x2F;&#x2F;要有&#39;&#39;</span><br></pre></td></tr></table></figure>
+
+<p>   用户连接时，必须指定密码，那就可以在创建用户时，通过指定identified by子句来设定密码</p>
+<p>   用密码登陆：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uzhaojunting_ps -p13</span><br></pre></td></tr></table></figure>
+
+<p>  如果希望指定的用户只能从某台指定的域(domain)或主机访问，可以<code>在创建用户时指定host</code>，例如，指定用户只能从10.0.0.99访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create user jss_ip@10.0.0.99 identified by password &#39;13&#39;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>​    drop user ‘用户名‘@’IP地址’;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user zhaojunting;</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改用户"><a href="#修改用户" class="headerlink" title="修改用户"></a>修改用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rename user &#39;用户名&#39;@&#39;IP地址&#39; to &#39;新用户名&#39;@&#39;IP地址&#39;;	&#x2F;&#x2F;要有&#39;&#39;</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password for &#39;用户名&#39;@&#39;IP地址&#39; &#x3D; &#39;Password&#39;(&#39;新密码&#39;);	&#x2F;&#x2F;要有&#39;&#39;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><h2 id="查看权限："><a href="#查看权限：" class="headerlink" title="查看权限："></a>查看权限：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show grants for &#39;用户&#39;@&#39;IP地址&#39; ;	&#x2F;&#x2F;要有&#39;&#39;</span><br></pre></td></tr></table></figure>
+
+<h2 id="授权："><a href="#授权：" class="headerlink" title="授权："></a>授权：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant 权限 on 数据库.表 to &#39;用户&#39;@&#39;IP地址&#39;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="取消授权："><a href="#取消授权：" class="headerlink" title="取消授权："></a>取消授权：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">revoke 权限 on 数据库.表 from &#39;用户&#39;@&#39;IP地址&#39;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT privileges ON databasename.tablename TO &#39;username&#39;@&#39;host&#39;;</span><br></pre></td></tr></table></figure>
+
+
+<p>说明:</p>
+<blockquote>
+<p>​        privileges：用户的操作权限，如SELECT，INSERT，UPDATE等，如果要授予所的权限则使用ALL<br>​        databasename：数据库名<br>​        tablename：表名，如果要授予该用户对所有数据库和表的相应操作权限则可用<em>表示，如</em>.*</p>
+</blockquote>
+<p>例子:</p>
+<blockquote>
+<p>​        GRANT SELECT, INSERT ON test.user TO ‘zjt’@’%’;<br>​        GRANT ALL ON <em>.</em> TO ‘zjt’@’%’;<br>​        GRANT ALL ON maindataplus.* TO ‘zjt’@’%’;</p>
+</blockquote>
+<p>注意: 用以上命令授权的用户不能给其它用户授权，如果想让该用户可以授权，用以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT privileges ON databasename.tablename TO &#39;username&#39;@&#39;host&#39; WITH GRANT OPTION; </span><br></pre></td></tr></table></figure>
+
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库:"></a>查看数据库:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="创建数据库："><a href="#创建数据库：" class="headerlink" title="创建数据库："></a>创建数据库：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database db1 DEFAULT CHARSET utf8 COLLATE utf8_general_ci;        # utf8编码</span><br><span class="line">create database db1 DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;    # gbk编码 </span><br></pre></td></tr></table></figure>
+
+<h2 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库:"></a>使用数据库:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use db1;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="表"><a href="#表" class="headerlink" title="表"></a>表</h1><h2 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show tables;	&#x2F;&#x2F;数据库中有哪些表</span><br><span class="line">desc 表名;	&#x2F;&#x2F;查看表结构</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">    列名  类型  是否可以为空，</span><br><span class="line">    列名  类型  是否可以为空</span><br><span class="line">)ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS &#96;runoob_tbl&#96;(</span><br><span class="line">   &#96;runoob_id&#96; INT UNSIGNED AUTO_INCREMENT,</span><br><span class="line">   &#96;runoob_title&#96; VARCHAR(100) NOT NULL,</span><br><span class="line">   &#96;runoob_author&#96; VARCHAR(40) NOT NULL,</span><br><span class="line">   &#96;submission_date&#96; DATE,</span><br><span class="line">   PRIMARY KEY ( &#96;runoob_id&#96; )</span><br><span class="line">)ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;如果你不想字段为 NULL 可以设置字段的属性为 NOT NULL， 在操作数据库时如果输入该字段的数据为NULL ，就会报错。</span><br><span class="line">&#x2F;&#x2F;AUTO_INCREMENT定义列为自增的属性，一般用于主键，数值会自动加1。</span><br><span class="line">&#x2F;&#x2F;PRIMARY KEY关键字用于定义列为主键。 您可以使用多列来定义主键，列间以逗号分隔。</span><br><span class="line">&#x2F;&#x2F;ENGINE 设置存储引擎，CHARSET 设置编码。</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table 表名;</span><br></pre></td></tr></table></figure>
+
+<h2 id="清空表内容"><a href="#清空表内容" class="headerlink" title="清空表内容"></a>清空表内容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名;</span><br><span class="line">truncate table 表名;</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h2><p>添加列：   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 列名 类型;</span><br></pre></td></tr></table></figure>
+
+<p>删除列：   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop column 列名;</span><br></pre></td></tr></table></figure>
+
+<p>修改列：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 modify column 列名 类型;  -- 类型</span><br><span class="line">alter table 表名 change 原列名 新列名 类型; -- 列名，类型</span><br></pre></td></tr></table></figure>
+
+<p>添加主键：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add primary key(列名);</span><br></pre></td></tr></table></figure>
+
+<p>删除主键：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop primary key;</span><br><span class="line">alter table 表名  modify  列名 int, drop primary key;</span><br></pre></td></tr></table></figure>
+
+<p>添加外键： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 从表 add constraint 外键名称（形如：FK_从表_主表） foreign key 从表(外键字段) references 主表(主键字段);</span><br></pre></td></tr></table></figure>
+
+<p>删除外键： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop foreign key 外键名称;</span><br></pre></td></tr></table></figure>
+
+<p>修改默认值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE testalter_tbl ALTER i SET DEFAULT 1000;</span><br></pre></td></tr></table></figure>
+
+<p>删除默认值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE testalter_tbl ALTER i DROP DEFAULT;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="表内容"><a href="#表内容" class="headerlink" title="表内容"></a>表内容</h1><h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 (列名,列名...) values (值,值,...);	&#x2F;&#x2F;一行数据</span><br><span class="line">insert into 表名 (列名,列名...) values (值,值,...),(值,值,值...);	&#x2F;&#x2F;多行数据</span><br><span class="line">insert into 表名 (列名,列名...) select (列名,列名...) from 表;</span><br></pre></td></tr></table></figure>
+
+<p>例：    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into tab1(name,email) values(&#39;zjt&#39;,&#39;2438968920@qq.com&#39;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名;	&#x2F;&#x2F; 删除表里全部数据</span><br><span class="line">delete from 表名 where id＝1 and name＝&#39;a&#39;; 	&#x2F;&#x2F; 删除ID &#x3D;1 和name&#x3D;&#39;a&#39; 那一行数据</span><br></pre></td></tr></table></figure>
+
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名 set 字段 ＝ &#39;zjt&#39; where id&#x3D;14;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from 表;</span><br><span class="line">select * from 表 where id &#x3D;1;</span><br><span class="line">select deptno as no,gender as gd from 表 where id &#x3D; 1;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;where</span><br><span class="line">    select * from 表 where id &gt; 1 and name !&#x3D; &#39;aylin&#39; and num &#x3D; 12;</span><br><span class="line">    select * from 表 where id between 5 and 16;</span><br><span class="line">    select * from 表 where id in (11,22,33);</span><br><span class="line">    select * from 表 where id not in (11,22,33);</span><br><span class="line">    select * from 表 where id in (select nid from 表);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;通配符like</span><br><span class="line">    select * from 表 where name like &#39;zhang%&#39;  # zhang开头的所有（多个字符串）</span><br><span class="line">    select * from 表 where name like &#39;zhang_&#39;  # zhang开头的所有（一个字符）</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;限制limit</span><br><span class="line">    select * from 表 limit 5;            - 前5行</span><br><span class="line">    select * from 表 limit 4,5;          - 从第4行开始的5行</span><br><span class="line">    select * from 表 limit 5 offset 4    - 从第4行开始的5行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;排序asc，desc</span><br><span class="line">    select * from 表 order by 列 asc              - 根据 “列” 从小到大排列</span><br><span class="line">    select * from 表 order by 列 desc             - 根据 “列” 从大到小排列</span><br><span class="line">    select * from 表 order by 列1 desc,列2 asc    - 根据 “列1” 从大到小排列，如果相同则按列2从小到大排序</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;分组group by</span><br><span class="line">    select num from 表 group by num;</span><br><span class="line">    select num,nid from 表 group by num,nid;</span><br><span class="line">    select num,nid from 表  where nid &gt; 10 group by num,nid order nid desc;</span><br><span class="line">    select num,nid,count(*),sum(score),max(score),min(score) from 表 group by num,nid;</span><br><span class="line">    select num from 表 group by num having max(id) &gt; 10;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;特别的：group by 必须在where之后，order by之前</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h2><ol>
+<li><p>MySQL在Linux系统下，输入<code>system clear</code>即可完成清屏！</p>
+</li>
+<li><p>在window系统下的dos窗口，MySQL 8版本提供了清屏命令，<code>system cls</code>！</p>
+</li>
+</ol>
+<h2 id="“-‘-“和-“-“的区别"><a href="#“-‘-“和-“-“的区别" class="headerlink" title="“ ‘ “和 “ ` “的区别"></a>“ ‘ “和 “ ` “的区别</h2><ol>
+<li><p>两者在linux下和windows下不同，linux下不区分，windows下区分。</p>
+<p><strong>在windows下</strong></p>
+<p>单引号( ‘ )或双引号主要用于<code>字符串</code>的引用符号</p>
+<p>如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &#39;hello&#39;, &#39;&quot;hello&quot;&#39;, &#39;&quot;&quot;hello&quot;&quot;&#39;, &#39;hel&#39;&#39;lo&#39;, &#39;&#x2F;&#39;hello&#39;;</span><br></pre></td></tr></table></figure>
+
+<p>数据库、表、索引、列和别名用的是引用符是反勾号(‘`’)  注：Esc下面的键</p>
+<p>如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;SELECT * FROM &#96;select&#96; WHERE &#96;select&#96;.id &gt; 100;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/07/21/Mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="cksfytye4000jwkvjfatxawdx" data-title="Mysql常用命令" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/07/23/SQL%E8%AF%AD%E8%A8%80%E7%9A%84%E5%88%86%E7%B1%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SQL语言的分类
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/07/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-DOSBox%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">汇编语言-DOSBox安装</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag">摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" rel="tag">汇编语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mybatis/" style="font-size: 20px;">Mybatis</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 10px;">摄影</a> <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" style="font-size: 13.33px;">汇编语言</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 16.67px;">计算机组成原理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/08/17/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI%E7%9A%84%E6%96%B9%E5%BC%8F/">Spring依赖注入DI的方式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/Mybatis%E5%8A%A8%E6%80%81sql/">Mybatis动态sql</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/Mybatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2/">Mybatis一对多和多对一关联查询</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/Mybatis%E4%B8%AD%E7%9A%84#%7B%7D%E5%92%8C$%7B%7D%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/">Mybatis中的#{}和${}符号的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/14/LOG4J%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">LOG4J配置文件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Pekaboo<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Peekaboo的个人网站 - Pekaboo&#39;s Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Peekaboo的个人网站 - Pekaboo&#39;s Personal Website">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Peekaboo的个人网站 - Pekaboo&#39;s Personal Website">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Pekaboo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Peekaboo的个人网站 - Pekaboo's Personal Website" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Peekaboo的个人网站 - Pekaboo&#39;s Personal Website</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Because deeply loves, therefore rigid!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-计算机组成原理-总线" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%80%BB%E7%BA%BF/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T09:11:16.000Z" itemprop="datePublished">2021-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%80%BB%E7%BA%BF/">计算机组成原理-总线</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>总线是链接多个部件的信息传输线，是各部件共享的传输介质。</p>
+<p>总线是信号的公共传输线，各个设备都连接在一条总线，可以在总线上进行数据传输，在任何时刻都只允许一对设备在总线上进行传输。</p>
+<p>因此总线的一个问题就是<strong>总线使用权</strong>在各个设备之间的传递问题。</p>
+<p>一条总线在同一时刻只允许有一个部件向总线发送信息，而多个部件可以同时从总线上接收相同的信息。总线实际上是由许多传输线或通路组成，每条线可一位一位的传输二进制代码，一串二进制代码可在一段时间内传输完成。</p>
+<p>总线上信息的传送分为<strong>串行</strong>和<strong>并行</strong>两种方式</p>
+<ul>
+<li>串行传输就是信息一位一位的传输，并行传输是将要传输的信息多位放在总线上进行传输。</li>
+<li>并行传输需要多条数据线，传输距离较短，距离过长容易造成接收到的数据不一致。而串行串行则传输距离较长。</li>
+</ul>
+<h1 id="一、总线分类"><a href="#一、总线分类" class="headerlink" title="一、总线分类"></a>一、总线分类</h1><p>按连接部件的不同，分为三类总线：**<code>片内总线 系统总线 通信总线</code>**</p>
+<h2 id="1-片内总线"><a href="#1-片内总线" class="headerlink" title="1. 片内总线"></a>1. 片内总线</h2><p>指芯片内部的总线，如在CPU芯片内部，寄存器和寄存器之间，寄存器和算术逻辑单元ALU之间都由片内总线连接。</p>
+<h2 id="2-系统总线"><a href="#2-系统总线" class="headerlink" title="2. 系统总线"></a>2. 系统总线</h2><p>系统总线指CPU、主存、I/O设备各大部件之间的信息传输。<br>按系统总线传输信息的不同，又可以分为 <strong><code>数据总线、地址总线和控制总线</code></strong></p>
+<h3 id="a-数据总线"><a href="#a-数据总线" class="headerlink" title="a. 数据总线"></a>a. 数据总线</h3><p>数据总线用来传输各功能部件之间的数据信息，它是<strong>双向传输总线</strong>，其位数与机器字长、存储字长有关，一般位8位、16位、32位。<br><strong>数据总线宽度：</strong>数据总线的位数，即字长的位数。 但并不是说数据总线的宽度就一定等于机器字长的位数。通常情况下，数据总线宽度是小于等于机器字长位数。 64位的机器字长，数据总线宽度可以是8位、16位、32位、64位。<br>双向传输是因为有的时候需要将数据存储到CPU中，有时要将数据从CPU存储到其他设备。</p>
+<h3 id="b-地址总线"><a href="#b-地址总线" class="headerlink" title="b. 地址总线"></a>b. 地址总线</h3><p>地址总线主要用来指出数据总线上源数据或目的数据在主存单元的地址或I/O设备的地址。<br>简单的说就是地址总线用来指明源数据在主存单元中要存入的地址，以及目的数据在I/O设备中的地址。<br>举例：</p>
+<p>要从存储器中读取一个数据时，CPU需要将要读取的数据在存储单元中的地址传送到地址总线上，发送给存储单元时，存储单元根据收到的地址信息读取数据。<br>要将数据经过I/O设备输出时，CPU除了将数据传输到数据总线外，还需要将该设备I/O接口的地址传送到地址总线上。这样才能根据地址找到对应的设备从而输出数据。<br>地址总线的宽度和地址的位数有关。</p>
+<h3 id="c-控制总线"><a href="#c-控制总线" class="headerlink" title="c. 控制总线"></a>c. 控制总线</h3><p>控制总线是用来控制各部件在数据总线和地址总线上的实现使用权。 用来发出各种控制信号的传输线。控制总线<strong>可以是单向的，也可以是双向的</strong>。<br>常见的控制信号如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">signal</th>
+<th align="center">function</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">时钟</td>
+<td align="center">用来同步各种操作。</td>
+</tr>
+<tr>
+<td align="center">复位</td>
+<td align="center">初始化所有部件。</td>
+</tr>
+<tr>
+<td align="center">总线请求</td>
+<td align="center">表示部件需要获得的使用权。</td>
+</tr>
+<tr>
+<td align="center">总线允许</td>
+<td align="center">表示需要获得总线使用权的部件已获得了使用权。</td>
+</tr>
+<tr>
+<td align="center">中断请求</td>
+<td align="center">表示部件提出中断请求。</td>
+</tr>
+<tr>
+<td align="center">中断响应</td>
+<td align="center">表示中断请求已被接收。</td>
+</tr>
+<tr>
+<td align="center">存储器写</td>
+<td align="center">将<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E6%80%BB%E7%BA%BF">数据总线</a>上的数据写至存储器的指定地址单元内。</td>
+</tr>
+<tr>
+<td align="center">存储器读</td>
+<td align="center">将指定<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83">存储单元</a>中的数据读到<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E6%80%BB%E7%BA%BF">数据总线</a>上。</td>
+</tr>
+<tr>
+<td align="center">I/O读</td>
+<td align="center">从指定的I/O端口将数据读到数据总线上。</td>
+</tr>
+<tr>
+<td align="center">I/O写</td>
+<td align="center">将数据总线上的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E8%BE%93%E5%87%BA">数据输出</a>到指定的I/O端口内。</td>
+</tr>
+<tr>
+<td align="center">传输响应</td>
+<td align="center">表示数据已被接收，或已将数据送至<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E6%80%BB%E7%BA%BF">数据总线</a>上。</td>
+</tr>
+</tbody></table>
+<h2 id="3-通信总线"><a href="#3-通信总线" class="headerlink" title="3. 通信总线"></a>3. 通信总线</h2><p>通信总线主要用于计算机系统之间或计算机系统与其他系统之间的铜线。<br>按传输方式可以分为两种：串行通信和并行通信</p>
+<p>串行通信<br>串行通信指数据在单条1位宽的传输线上，一位一位的按顺序分时发送。<br>1字节的信息在串行通信中要分8次从地位到高位按顺序逐次传送。</p>
+<p>并行通信<br>并行通信指数据在多条1位宽的传输线上，同时由源传送到目的地。</p>
+<p>并行通信适用于近距离的数据传输，串行通信适用于远距离。 数据传输速率与距离成反比。</p>
+<h2 id="4-I-O总线"><a href="#4-I-O总线" class="headerlink" title="4. I/O总线"></a>4. I/O总线</h2><p>I/Ｏ总线主要用于连接计算机内部的中低速Ｉ/O设备。</p>
+<p>目前常见的有PCI总线、连接磁盘设备的PATA、SATA总线等。</p>
+<p>随着计算机性能的飞速发展，早期的系统总线，如ISA、EISA总线都演变成了I/O总线。</p>
+<h1 id="二、总线标准"><a href="#二、总线标准" class="headerlink" title="二、总线标准"></a>二、总线标准</h1><p>总线特性包括<strong>机械特性、电气特性、功能特性、时间特性</strong>。</p>
+<ul>
+<li><p>机械结构规范：模块尺寸、总线插头、总线接插件以及安装尺寸均有统一规定。</p>
+</li>
+<li><p>功能规范：总线每条信号线（引脚的名称）、功能以及工作过程要有统一规定。</p>
+</li>
+<li><p>电气规范：总线每条信号线的有效电平、动态转换时间、负载能力等。</p>
+</li>
+<li><p>时序规范：明确每根线的信息在什么时间有效。</p>
+<ul>
+<li><p><strong>通用接口</strong>：按总线标准设计的接口可视为通用接口。采用总线标准可以为计算机接口的软硬件设计提供方便。 </p>
+</li>
+<li><p>目前流行的总线标准：</p>
+<pre><code>        ✔ ISA（Industrial Standard Architecture）总线
+    
+        ✔ EISA（Extended Industrial Standard Architecture）总线
+    
+        ✔ VESA（VL-BUS）总线
+    
+        ✔ PCI 总线           
+    
+        ✔ AGP 总线
+    
+        ✔ RS-232C 总线
+    
+        ✔ USB 总线
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="三、性能指标"><a href="#三、性能指标" class="headerlink" title="三、性能指标"></a>三、性能指标</h1><p>总线性能指标如下：</p>
+<p>​    · <strong>总线宽度</strong>：通常是指数据总线的根数，用bit 表示，如8位、16位、32位、64位</p>
+<p>​    · <strong>总线带宽</strong>：可理解为总线的<u>数据传输速率</u>，即单位时间内总线上传输数据的位数，通常用每秒传输信息的字节数来衡量，单位可用 MBps 表示。（1MB=10^6B, 1GB=10^9B）</p>
+<p>​    · <strong>时钟同步/异步</strong>：总线上的数据与时钟同步工作的总线称为同步总线，与始终不同步工作的总线称为异步总线。</p>
+<p>​    · <strong>总线时钟频率</strong>：总线时钟周期的倒数，同步传输总线中传输双方具有完全同步的时钟信号，时钟频率越快，传输速率越快</p>
+<p>​    · <strong>总线传输周期</strong>：一次总线操作完成所需要的时间。包括总线申请阶段、寻址阶段、传输阶段、结束阶段的时间，简称<strong>总线周期</strong>。通常包括多个总线时钟周期，总线的时钟频率越高，总线周期就越短；如果采用地址复用技术，则会增加总线周期；通常一个总线周期只能传送一个总线宽度的数据。</p>
+<p>​    · <strong>单时钟传输次数</strong>：一个总线时钟周期内传输数据的次数，通常值为1。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">总线的实际工作频率 &#x3D; 总线时钟频率×单时钟传输次数</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">同步总线带宽 &#x3D; 总线宽度×总线时钟频率×单时钟传输次数</span><br></pre></td></tr></table></figure>
+
+<p>​    · <strong>总线复用</strong>：一条信号线上分时传送两种信号。例如通常地址总线与数据总线在物理上是分开的两种总线，地址总线传输地址码，数据总线传输数据信息。为了提高总线的利用率，优化设计，特将地址总线和数据总线共用一组物理线路，在这组物理线路上分式传输地址信号和数据信号，即为总线的多路复用。</p>
+<p>​    · <strong>信号线数</strong>：地址总线、数据总线和控制总线三种总线书的总和</p>
+<p>​    · <strong>总线控制方式</strong>：包括突发工作、自动配置、仲裁方式、逻辑方式、计数方式等</p>
+<p>​    · <strong>总线负载能力</strong>：总线上能同时连接的设备数</p>
+<p>​    · <strong>其他指标</strong>：如电源电压、总线宽度能否扩展等 </p>
+<h1 id="四、总线传输过程"><a href="#四、总线传输过程" class="headerlink" title="四、总线传输过程"></a>四、总线传输过程</h1><p>​        1、请求阶段（传输请求+总选仲裁）</p>
+<p>　　需要使用总线的主设备（如<a target="_blank" rel="noopener" href="http://www.elecfans.com/tags/cpu/">CPU</a>、<a target="_blank" rel="noopener" href="http://www.elecfans.com/tags/dma/">DMA</a>控制器等）向总线控制器提出占用总线的请求（控制总线），经总线控制器判定，若满足响应条件，则发出响应信号，并把下一个总线传送周期的总线控制权授予申请者。</p>
+<p>　　2、寻址阶段</p>
+<p>　　获得总线控制权的总线主设备，通过地址总线发出目标从设备的<a target="_blank" rel="noopener" href="http://www.hqchip.com/app/724">存储器</a>或<a target="_blank" rel="noopener" href="http://www.hqchip.com/app/1010">I/O</a>端口的地址以及有关控制命令，经地址译码选中被访问的模块并开始启动数据转换。</p>
+<p>　　3、传输阶段</p>
+<p>　　主要用于实现主设备和从设备之间的数据传输。通常一次传输只能传输一个计算机字长的数据。</p>
+<p>　　4、结束阶段</p>
+<p>　　主设备撤销总线请求，释放总线控制权，以便总线控制器重新分配总线使用权。</p>
+<h1 id="五、总线仲裁"><a href="#五、总线仲裁" class="headerlink" title="五、总线仲裁"></a>五、总线仲裁</h1><h2 id="集中式仲裁"><a href="#集中式仲裁" class="headerlink" title="集中式仲裁"></a>集中式仲裁</h2><p><em>包括链式查询、计数器定时查询、独立请求</em></p>
+<ol>
+<li><p>链式查询方式<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/RuaRoQ"><img src="https://z3.ax1x.com/2021/06/23/RuaRoQ.jpg" alt="链式查询方式"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Bus Request, 总线请求线BR</span><br><span class="line">Bus Grant, 总线响应线BG</span><br><span class="line">Bus State, 总线状态线BS</span><br></pre></td></tr></table></figure>
+
+<p>总线许可信号BG沿着菊花链串行输送，若BG信号到达的设备没有总线请求，则将该信号立即传送到下一个设备；若当前设备有总线请求，则撤销其发出的总线请求信号BR，并将总线忙信号BS置为“1”，表示它占用了总线，设备获得了总线使用权后，总线许可信号BG不再向后传递。</p>
+<ol>
+<li>优点：结构简单、控制线少、扩充容易</li>
+<li>缺点：各设备优先级固定，设备离总线控制器越近优先级越高，当优先级高的设备频繁请求使用总线时，会使优先级低的设备长期不能使用总线，这种现象成为<code>饥饿现象</code>。</li>
+</ol>
+</li>
+<li><p>计数器定时查询方式<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rua2dg"><img src="https://z3.ax1x.com/2021/06/23/Rua2dg.jpg" alt="计数器定时查询方式"></a></p>
+</li>
+<li><p>独立请求方式</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rua6L8"><img src="https://z3.ax1x.com/2021/06/23/Rua6L8.jpg" alt="独立请求方式"></a></p>
+</li>
+</ol>
+<h2 id="分布式仲裁"><a href="#分布式仲裁" class="headerlink" title="分布式仲裁"></a>分布式仲裁</h2><ol>
+<li>自举分散式仲裁</li>
+<li>并行竞争仲裁</li>
+<li>冲突检测分散式仲裁</li>
+</ol>
+<h1 id="六、总线结构"><a href="#六、总线结构" class="headerlink" title="六、总线结构"></a>六、总线结构</h1><ol>
+<li><p>单总线结构</p>
+<p><img src="https://www.hualigs.cn/image/60d21311ab5ce.jpg" alt="单总线结构"><br>系统总线负载重，计算机系统性能差</p>
+</li>
+<li><p>双总线结构</p>
+<p>增加了一条CPU与内存控制器之间的<code>高速存储总线</code><br><a target="_blank" rel="noopener" href="https://imgtu.com/i/RudVfA"><img src="https://z3.ax1x.com/2021/06/23/RudVfA.jpg" alt="以主存位中心的双总线结构"></a></p>
+<p>将慢速设备从系统总线上分离到单独的I/O总线上，将CPU、主存以及一些高速设备直接连接到局部总线（系统总线）上，I/O总线和局部总线之间通过<code>桥接器</code>相连。</p>
+<p>降低了慢速设备性能对总线性能的影响。<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/RudeSI"><img src="https://z3.ax1x.com/2021/06/23/RudeSI.jpg" alt="采用桥接器连接的双总线结构"></a><br>二者的基本思想都是将总线中<code>慢速活动与高速活动相分离</code>。</p>
+</li>
+<li><p>三总线结构<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/RuduOf"><img src="https://z3.ax1x.com/2021/06/23/RuduOf.jpg" alt="三总线结构"></a><br>PCI/PCI桥用于扩展PCI总线。<br>进一步将不同速率的传输活动进行细分，将最快的CPU、DRAM放在<code>系统总线</code>（又称HOST总线、CPU总线）上，将高速设备连接在<code>PCI总线</code>上，将传统的慢速设备连接在<code>ISA总线</code>（遗留总线）上。</p>
+</li>
+<li><p>高性能总线<br>随着CPU性能不断提升，高速外部设备不断涌现，PCI总线逐渐遇到瓶颈，后续诞生了AGP图形加速总线、PCIe总线等。</p>
+</li>
+</ol>
+<h1 id="七、其他"><a href="#七、其他" class="headerlink" title="七、其他"></a>七、其他</h1><ol>
+<li><p><strong>电平</strong><br>单端方式：采用一条信号线和一条公共接地线来传递信号，根据信号线电平的不同来表示不同的数据；一般用高电平表示逻辑“1”，低电平表示逻辑“0”.</p>
+<p>差分方式：在两根信号线上分别传输信号，两信号振幅相等，相位相反，通过两个电压的差值来判断数据的值；一般采用负逻辑。</p>
+</li>
+<li><p><strong>总线设备的分类</strong><br>可以用用总线控制权并主动进行总线传输控制的设备称为<strong>主设备</strong>，而被主设备寻址访问的设备称为<strong>从设备</strong>。</p>
+<p>内存只能是从设备。</p>
+</li>
+<li><p><strong>总线主控技术</strong><br>高速IO设备内置了DMA控制器，无须第三方DMA控制器就可以直接获得总线控制权，在不需要CPU干预的情况下与主存进行数据交互。<br>这种方式又称为第一方DMA控制。</p>
+</li>
+<li><p>现代总线逐渐向高频串行总线发展，如<code>PCIe、SATA</code>总线。</p>
+</li>
+<li><p>信息在CPU内部通常都是<code>并行处理</code>的，要将信息以串行方式传送，在发送端和接收端分别需要增加<code>并串转换和串并转换</code>电路。</p>
+</li>
+<li><p>传送方向不同，串行传送分为<br><img src="https://i.loli.net/2021/06/22/JGr2xYUsFv5Wgh1.png" alt="单工、半双工、双工"></p>
+</li>
+<li><p>波特率<br>每秒传送的二进制位数，单位bit/s，包含启停位和校验位</p>
+</li>
+<li><p>数传率<br>单位时间内总线传输的有效数据位，不包括启停位和校验位</p>
+</li>
+<li><p>总线仲裁<br>决定申请总线的多个主设备中哪一个获得总线控制权的过程就是<code>总线仲裁</code>。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%80%BB%E7%BA%BF/" data-id="cksfytyea000wwkvj1d4lcdrs" data-title="计算机组成原理-总线" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Markdown-语法说明" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/28/Markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="article-date">
+  <time class="dt-published" datetime="2021-04-28T11:20:02.000Z" itemprop="datePublished">2021-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/28/Markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/">Markdown-语法说明</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="宗旨"><a href="#宗旨" class="headerlink" title="宗旨"></a>宗旨</h3><p>Markdown 的目标是实现「易读易写」。</p>
+<p>可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>、<a target="_blank" rel="noopener" href="http://www.aaronsw.com/2002/atx/">atx</a>、<a target="_blank" rel="noopener" href="http://textism.com/tools/textile/">Textile</a>、<a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>、<a target="_blank" rel="noopener" href="http://www.triptico.com/software/grutatxt.html">Grutatext</a> 和 <a target="_blank" rel="noopener" href="http://ettext.taint.org/doc/">EtText</a>，而最大灵感来源其实是纯文本电子邮件的格式。</p>
+<p>总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像<em>强调</em>。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。</p>
+<h3 id="兼容-HTML"><a href="#兼容-HTML" class="headerlink" title="兼容 HTML"></a>兼容 HTML</h3><p>Markdown 语法的目标是：成为一种适用于网络的<em>书写</em>语言。</p>
+<p>Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想<em>不是</em>要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种<em>发布</em>的格式，Markdown 是一种<em>书写</em>的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。</p>
+<p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。</p>
+<p>要制约的只有一些 HTML 区块元素――比如 <code>、</code>、<code>、</code> 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 `` 标签。</p>
+<p>例子如下，在 Markdown 文件里加上一段 HTML 表格：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">这是一个普通段落。</span><br><span class="line"></span><br><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;Foo&lt;&#x2F;td&gt;</span><br><span class="line">    &lt;&#x2F;tr&gt;</span><br><span class="line">&lt;&#x2F;table&gt;</span><br><span class="line"></span><br><span class="line">这是另一个普通段落。</span><br></pre></td></tr></table></figure>
+
+<p>请注意，在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的<code>*强调*</code>会没有效果。</p>
+<p>HTML 的区段（行内）标签如 <code>、</code>、<code>~~</code>~~ 可以在 Markdown 的段落、列表或是标题里随意使用。依照个人习惯，甚至可以不用 Markdown 格式，而直接采用 HTML 标签来格式化。举例说明：如果比较喜欢 HTML 的 <code>或</code> 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图像标签语法。</p>
+<p>和处在 HTML 区块标签间不同，Markdown 语法在 HTML 区段标签间是有效的。</p>
+<h3 id="特殊字符自动转换"><a href="#特殊字符自动转换" class="headerlink" title="特殊字符自动转换"></a>特殊字符自动转换</h3><p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和 <code>&amp;</code> 。 <code>&lt;</code> 符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML 实体，如果你只是想要显示这些字符的原型，你必须要使用实体的形式，像是 <code>&lt;</code> 和 <code>&amp;</code>。</p>
+<p><code>&amp;</code> 字符尤其让网络文档编写者受折磨，如果你要打「<code>AT&amp;T</code>」 ，你必须要写成「<code>AT&amp;T</code>」。而网址中的 <code>&amp;</code> 字符也要转换。比如你要链接到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;images.google.com&#x2F;images?num&#x3D;30&amp;q&#x3D;larry+bird</span><br></pre></td></tr></table></figure>
+
+<p>你必须要把网址转换写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;images.google.com&#x2F;images?num&#x3D;30&amp;q&#x3D;larry+bird</span><br></pre></td></tr></table></figure>
+
+<p>才能放到链接标签的 <code>href</code> 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。</p>
+<p>Markdown 让你可以自然地书写字符，需要转换的由它来处理好了。如果你使用的 <code>&amp;</code> 字符是 HTML 字符实体的一部分，它会保留原状，否则它会被转换成 <code>&amp;amp</code>;。</p>
+<p>所以你如果要在文档中插入一个版权符号 <code>©</code>，你可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;copy;</span><br></pre></td></tr></table></figure>
+
+<p>Markdown 会保留它不动。而若你写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AT&amp;T</span><br></pre></td></tr></table></figure>
+
+<p>Markdown 就会将它转为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AT&amp;T</span><br></pre></td></tr></table></figure>
+
+<p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 允许 <a target="_blank" rel="noopener" href="https://www.appinn.com/markdown/#html">兼容 HTML</a> ，如果你是把 <code>&lt;</code> 符号作为 HTML 标签的定界符使用，那 Markdown 也不会对它做任何转换，但是如果你写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 &lt; 5</span><br></pre></td></tr></table></figure>
+
+<p>Markdown 将会把它转换为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 &lt; 5</span><br></pre></td></tr></table></figure>
+
+<p>不过需要注意的是，code 范围内，不论是行内还是区块， <code>&lt;</code> 和 <code>&amp;</code> 两个符号都<em>一定</em>会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code （和 HTML 相对而言， HTML 语法中，你要把所有的 <code>&lt;</code> 和 <code>&amp;</code> 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。）</p>
+<hr>
+<h2 id="区块元素"><a href="#区块元素" class="headerlink" title="区块元素"></a>区块元素</h2><h3 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h3><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。</p>
+<p>「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（插入换行符），这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成 ``标签。</p>
+<p>如果你<em>确实</em>想要依赖 Markdown 来插入 ``标签的话，在插入处先按入两个以上的空格然后回车。</p>
+<p>的确，需要多费点事（多加空格）来产生 <code>，但是简单地「每个换行都转换为</code>」的方法在 Markdown 中并不适合， Markdown 中 email 式的 <a target="_blank" rel="noopener" href="https://www.appinn.com/markdown/#blockquote">区块引用</a> 和多段落的 <a target="_blank" rel="noopener" href="https://www.appinn.com/markdown/#list">列表</a> 在使用换行来排版的时候，不但更好用，还更方便阅读。</p>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>Markdown 支持两种标题的语法，类 <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> 和类 <a target="_blank" rel="noopener" href="http://www.aaronsw.com/2002/atx/">atx</a> 形式。</p>
+<p>类 Setext 形式是用底线的形式，利用 <code>=</code> （最高阶标题）和 <code>-</code> （第二阶标题），例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">This is an H1</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">This is an H2</span><br><span class="line">-------------</span><br></pre></td></tr></table></figure>
+
+<p>任何数量的 <code>=</code> 和 <code>-</code> 都可以有效果。</p>
+<p>类 Atx 形式则是在行首插入 1 到 6 个 <code>#</code> ，对应到标题 1 到 6 阶，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 这是 H1</span><br><span class="line"></span><br><span class="line">## 这是 H2</span><br><span class="line"></span><br><span class="line">###### 这是 H6</span><br></pre></td></tr></table></figure>
+
+<p>你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 <code>#</code>，而行尾的 <code>#</code> 数量也不用和开头一样（行首的井字符数量决定标题的阶数）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 这是 H1 #</span><br><span class="line"></span><br><span class="line">## 这是 H2 ##</span><br><span class="line"></span><br><span class="line">### 这是 H3 ######</span><br></pre></td></tr></table></figure>
+
+<h3 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h3><p>Markdown 标记区块引用是使用类似 email 中用 <code>&gt;</code> 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 <code>&gt;</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</span><br><span class="line">&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line">&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</span><br><span class="line">&gt; </span><br><span class="line">&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</span><br><span class="line">&gt; id sem consectetuer libero luctus adipiscing.</span><br></pre></td></tr></table></figure>
+
+<p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 <code>&gt;</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</span><br><span class="line">consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line">Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</span><br><span class="line"></span><br><span class="line">&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</span><br><span class="line">id sem consectetuer libero luctus adipiscing.</span><br></pre></td></tr></table></figure>
+
+<p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 <code>&gt;</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is the first level of quoting.</span><br><span class="line">&gt;</span><br><span class="line">&gt; &gt; This is nested blockquote.</span><br><span class="line">&gt;</span><br><span class="line">&gt; Back to the first level.</span><br></pre></td></tr></table></figure>
+
+<p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; ## 这是一个标题。</span><br><span class="line">&gt; </span><br><span class="line">&gt; 1.   这是第一行列表项。</span><br><span class="line">&gt; 2.   这是第二行列表项。</span><br><span class="line">&gt; </span><br><span class="line">&gt; 给出一些例子代码：</span><br><span class="line">&gt; </span><br><span class="line">&gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>任何像样的文本编辑器都能轻松地建立 email 型的引用。例如在 BBEdit 中，你可以选取文字后然后从选单中选择<em>增加引用阶层</em>。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>Markdown 支持有序列表和无序列表。</p>
+<p>无序列表使用星号、加号或是减号作为列表标记：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   Red</span><br><span class="line">*   Green</span><br><span class="line">*   Blue</span><br></pre></td></tr></table></figure>
+
+<p>等同于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+   Red</span><br><span class="line">+   Green</span><br><span class="line">+   Blue</span><br></pre></td></tr></table></figure>
+
+<p>也等同于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-   Red</span><br><span class="line">-   Green</span><br><span class="line">-   Blue</span><br></pre></td></tr></table></figure>
+
+<p>有序列表则使用数字接着一个英文句点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.  Bird</span><br><span class="line">2.  McHale</span><br><span class="line">3.  Parish</span><br></pre></td></tr></table></figure>
+
+<p>很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;Bird&lt;&#x2F;li&gt;</span><br><span class="line">&lt;li&gt;McHale&lt;&#x2F;li&gt;</span><br><span class="line">&lt;li&gt;Parish&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ol&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果你的列表标记写成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.  Bird</span><br><span class="line">1.  McHale</span><br><span class="line">1.  Parish</span><br></pre></td></tr></table></figure>
+
+<p>或甚至是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3. Bird</span><br><span class="line">1. McHale</span><br><span class="line">8. Parish</span><br></pre></td></tr></table></figure>
+
+<p>你都会得到完全相同的 HTML 输出。重点在于，你可以让 Markdown 文件的列表数字和输出的结果相同，或是你懒一点，你可以完全不用在意数字的正确性。</p>
+<p>如果你使用懒惰的写法，建议第一个项目最好还是从 1. 开始，因为 Markdown 未来可能会支持有序列表的 start 属性。</p>
+<p>列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。</p>
+<p>要让列表看起来更漂亮，你可以把内容用固定的缩进整理好：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,</span><br><span class="line">    viverra nec, fringilla in, laoreet vitae, risus.</span><br><span class="line">*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</span><br><span class="line">    Suspendisse id sem consectetuer libero luctus adipiscing.</span><br></pre></td></tr></table></figure>
+
+<p>但是如果你懒，那也行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,</span><br><span class="line">viverra nec, fringilla in, laoreet vitae, risus.</span><br><span class="line">*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</span><br><span class="line">Suspendisse id sem consectetuer libero luctus adipiscing.</span><br></pre></td></tr></table></figure>
+
+<p>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 `` 标签包起来，举例来说：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*   Bird</span><br><span class="line">*   Magic</span><br></pre></td></tr></table></figure>
+
+<p>会被转换为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;Bird&lt;&#x2F;li&gt;</span><br><span class="line">&lt;li&gt;Magic&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但是这个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   Bird</span><br><span class="line"></span><br><span class="line">*   Magic</span><br></pre></td></tr></table></figure>
+
+<p>会被转换为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;&lt;p&gt;Bird&lt;&#x2F;p&gt;&lt;&#x2F;li&gt;</span><br><span class="line">&lt;li&gt;&lt;p&gt;Magic&lt;&#x2F;p&gt;&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+
+<p>列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.  This is a list item with two paragraphs. Lorem ipsum dolor</span><br><span class="line">    sit amet, consectetuer adipiscing elit. Aliquam hendrerit</span><br><span class="line">    mi posuere lectus.</span><br><span class="line"></span><br><span class="line">    Vestibulum enim wisi, viverra nec, fringilla in, laoreet</span><br><span class="line">    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum</span><br><span class="line">    sit amet velit.</span><br><span class="line"></span><br><span class="line">2.  Suspendisse id sem consectetuer libero luctus adipiscing.</span><br></pre></td></tr></table></figure>
+
+<p>如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*   This is a list item with two paragraphs.</span><br><span class="line"></span><br><span class="line">    This is the second paragraph in the list item. You&#39;re</span><br><span class="line">only required to indent the first line. Lorem ipsum dolor</span><br><span class="line">sit amet, consectetuer adipiscing elit.</span><br><span class="line"></span><br><span class="line">*   Another item in the same list.</span><br></pre></td></tr></table></figure>
+
+<p>如果要在列表项目内放进引用，那 <code>&gt;</code> 就需要缩进：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*   A list item with a blockquote:</span><br><span class="line"></span><br><span class="line">    &gt; This is a blockquote</span><br><span class="line">    &gt; inside a list item.</span><br></pre></td></tr></table></figure>
+
+<p>如果要放代码区块的话，该区块就需要缩进<em>两次</em>，也就是 8 个空格或是 2 个制表符：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   一列表项包含一个列表区块：</span><br><span class="line"></span><br><span class="line">        &lt;代码写在这&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当然，项目列表很可能会不小心产生，像是下面这样的写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1986. What a great season.</span><br></pre></td></tr></table></figure>
+
+<p>换句话说，也就是在行首出现<em>数字-句点-空白</em>，要避免这样的状况，你可以在句点前面加上反斜杠。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1986\. What a great season.</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 <code>和</code> 标签来把代码区块包起来。</p>
+<p>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这是一个普通段落：</span><br><span class="line"></span><br><span class="line">    这是一个代码区块。</span><br></pre></td></tr></table></figure>
+
+<p>Markdown 会转换成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是一个普通段落：&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;pre&gt;&lt;code&gt;这是一个代码区块。</span><br><span class="line">&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Here is an example of AppleScript:</span><br><span class="line"></span><br><span class="line">    tell application &quot;Foo&quot;</span><br><span class="line">        beep</span><br><span class="line">    end tell</span><br></pre></td></tr></table></figure>
+
+<p>会被转换为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Here is an example of AppleScript:&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;pre&gt;&lt;code&gt;tell application &quot;Foo&quot;</span><br><span class="line">    beep</span><br><span class="line">end tell</span><br><span class="line">&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</span><br></pre></td></tr></table></figure>
+
+<p>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</p>
+<p>在代码区块里面， <code>&amp;</code> 、 <code>&lt;</code> 和 <code>&gt;</code> 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;footer&quot;&gt;</span><br><span class="line">    &amp;copy; 2004 Foo Corporation</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>会被转换为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre&gt;&lt;code&gt;&lt;div class&#x3D;&quot;footer&quot;&gt;</span><br><span class="line">    &amp;copy; 2004 Foo Corporation</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</span><br></pre></td></tr></table></figure>
+
+<p>代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。</p>
+<h3 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h3><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* * *</span><br><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">- - -</span><br><span class="line"></span><br><span class="line">---------------------------------------</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="区段元素"><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>Markdown 支持两种形式的链接语法： <em>行内式</em>和<em>参考式</em>两种形式。</p>
+<p>不管是哪一种，链接文字都是用 [方括号] 来标记。</p>
+<p>要建立一个<em>行内式</em>的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This is [an example](http:&#x2F;&#x2F;example.com&#x2F; &quot;Title&quot;) inline link.</span><br><span class="line"></span><br><span class="line">[This link](http:&#x2F;&#x2F;example.net&#x2F;) has no title attribute.</span><br></pre></td></tr></table></figure>
+
+<p>会产生：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;This is &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;example.com&#x2F;&quot; title&#x3D;&quot;Title&quot;&gt;</span><br><span class="line">an example&lt;&#x2F;a&gt; inline link.&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;example.net&#x2F;&quot;&gt;This link&lt;&#x2F;a&gt; has no</span><br><span class="line">title attribute.&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果你是要链接到同样主机的资源，你可以使用相对路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">See my [About](&#x2F;about&#x2F;) page for details.</span><br></pre></td></tr></table></figure>
+
+<p><em>参考式</em>的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is [an example][id] reference-style link.</span><br></pre></td></tr></table></figure>
+
+<p>你也可以选择性地在两个方括号中间加上一个空格：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is [an example] [id] reference-style link.</span><br></pre></td></tr></table></figure>
+
+<p>接着，在文件的任意处，你可以把这个标记的链接内容定义出来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[id]: http:&#x2F;&#x2F;example.com&#x2F;  &quot;Optional Title Here&quot;</span><br></pre></td></tr></table></figure>
+
+<p>链接内容定义的形式为：</p>
+<ul>
+<li>方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字</li>
+<li>接着一个冒号</li>
+<li>接着一个以上的空格或制表符</li>
+<li>接着链接的网址</li>
+<li>选择性地接着 title 内容，可以用单引号、双引号或是括弧包着</li>
+</ul>
+<p>下面这三种链接的定义都是相同：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[foo]: http:&#x2F;&#x2F;example.com&#x2F;  &quot;Optional Title Here&quot;</span><br><span class="line">[foo]: http:&#x2F;&#x2F;example.com&#x2F;  &#39;Optional Title Here&#39;</span><br><span class="line">[foo]: http:&#x2F;&#x2F;example.com&#x2F;  (Optional Title Here)</span><br></pre></td></tr></table></figure>
+
+<p><strong>请注意：</strong>有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。</p>
+<p>链接网址也可以用方括号包起来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[id]: &lt;http:&#x2F;&#x2F;example.com&#x2F;&gt;  &quot;Optional Title Here&quot;</span><br></pre></td></tr></table></figure>
+
+<p>你也可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[id]: http:&#x2F;&#x2F;example.com&#x2F;longish&#x2F;path&#x2F;to&#x2F;resource&#x2F;here</span><br><span class="line">    &quot;Optional Title Here&quot;</span><br></pre></td></tr></table></figure>
+
+<p>网址定义只有在产生链接的时候用到，并不会直接出现在文件之中。</p>
+<p>链接辨别标签可以有字母、数字、空白和标点符号，但是并<em>不</em>区分大小写，因此下面两个链接是一样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[link text][a]</span><br><span class="line">[link text][A]</span><br></pre></td></tr></table></figure>
+
+<p><em>隐式链接标记</em>功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 “Google” 链接到 google.com，你可以简化成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Google][]</span><br></pre></td></tr></table></figure>
+
+<p>然后定义链接内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Google]: http:&#x2F;&#x2F;google.com&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>由于链接文字可能包含空白，所以这种简化型的标记内也许包含多个单词：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Visit [Daring Fireball][] for more information.</span><br></pre></td></tr></table></figure>
+
+<p>然后接着定义链接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Daring Fireball]: http:&#x2F;&#x2F;daringfireball.net&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。</p>
+<p>下面是一个参考式链接的范例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">I get 10 times more traffic from [Google] [1] than from</span><br><span class="line">[Yahoo] [2] or [MSN] [3].</span><br><span class="line"></span><br><span class="line">  [1]: http:&#x2F;&#x2F;google.com&#x2F;        &quot;Google&quot;</span><br><span class="line">  [2]: http:&#x2F;&#x2F;search.yahoo.com&#x2F;  &quot;Yahoo Search&quot;</span><br><span class="line">  [3]: http:&#x2F;&#x2F;search.msn.com&#x2F;    &quot;MSN Search&quot;</span><br></pre></td></tr></table></figure>
+
+<p>如果改成用链接名称的方式写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">I get 10 times more traffic from [Google][] than from</span><br><span class="line">[Yahoo][] or [MSN][].</span><br><span class="line"></span><br><span class="line">  [google]: http:&#x2F;&#x2F;google.com&#x2F;        &quot;Google&quot;</span><br><span class="line">  [yahoo]:  http:&#x2F;&#x2F;search.yahoo.com&#x2F;  &quot;Yahoo Search&quot;</span><br><span class="line">  [msn]:    http:&#x2F;&#x2F;search.msn.com&#x2F;    &quot;MSN Search&quot;</span><br></pre></td></tr></table></figure>
+
+<p>上面两种写法都会产生下面的 HTML。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;I get 10 times more traffic from &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;google.com&#x2F;&quot;</span><br><span class="line">title&#x3D;&quot;Google&quot;&gt;Google&lt;&#x2F;a&gt; than from</span><br><span class="line">&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;search.yahoo.com&#x2F;&quot; title&#x3D;&quot;Yahoo Search&quot;&gt;Yahoo&lt;&#x2F;a&gt;</span><br><span class="line">or &lt;a href&#x3D;&quot;http:&#x2F;&#x2F;search.msn.com&#x2F;&quot; title&#x3D;&quot;MSN Search&quot;&gt;MSN&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>下面是用行内式写的同样一段内容的 Markdown 文件，提供作为比较之用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I get 10 times more traffic from [Google](http:&#x2F;&#x2F;google.com&#x2F; &quot;Google&quot;)</span><br><span class="line">than from [Yahoo](http:&#x2F;&#x2F;search.yahoo.com&#x2F; &quot;Yahoo Search&quot;) or</span><br><span class="line">[MSN](http:&#x2F;&#x2F;search.msn.com&#x2F; &quot;MSN Search&quot;).</span><br></pre></td></tr></table></figure>
+
+<p>参考式的链接其实重点不在于它比较好写，而是它比较好读，比较一下上面的范例，使用参考式的文章本身只有 81 个字符，但是用行内形式的却会增加到 176 个字元，如果是用纯 HTML 格式来写，会有 234 个字元，在 HTML 格式中，标签比文本还要多。</p>
+<p>使用 Markdown 的参考式链接，可以让文件更像是浏览器最后产生的结果，让你可以把一些标记相关的元数据移到段落文字之外，你就可以增加链接而不让文章的阅读感觉被打断。</p>
+<h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><p>Markdown 使用星号（<code>*</code>）和底线（<code>_</code>）作为标记强调字词的符号，被 <code>*</code> 或 <code>_</code> 包围的字词会被转成用 <code>标签包围，用两个</code>*<code>或</code>_<code>包起来的话，则会被转成</code>，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*single asterisks*</span><br><span class="line"></span><br><span class="line">_single underscores_</span><br><span class="line"></span><br><span class="line">**double asterisks**</span><br><span class="line"></span><br><span class="line">__double underscores__</span><br></pre></td></tr></table></figure>
+
+<p>会转成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;em&gt;single asterisks&lt;&#x2F;em&gt;</span><br><span class="line"></span><br><span class="line">&lt;em&gt;single underscores&lt;&#x2F;em&gt;</span><br><span class="line"></span><br><span class="line">&lt;strong&gt;double asterisks&lt;&#x2F;strong&gt;</span><br><span class="line"></span><br><span class="line">&lt;strong&gt;double underscores&lt;&#x2F;strong&gt;</span><br></pre></td></tr></table></figure>
+
+<p>你可以随便用你喜欢的样式，唯一的限制是，你用什么符号开启标签，就要用什么符号结束。</p>
+<p>强调也可以直接插在文字中间：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">un*frigging*believable</span><br></pre></td></tr></table></figure>
+
+<p>但是<strong>如果你的 <code>\*</code> 和 <code>_</code> 两边都有空白的话，它们就只会被当成普通的符号</strong>。</p>
+<p>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\*this text is surrounded by literal asterisks\*</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>如果要标记一小段行内代码，你可以用反引号把它包起来（```），例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Use the &#96;printf()&#96; function.</span><br></pre></td></tr></table></figure>
+
+<p>会产生：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Use the &lt;code&gt;printf()&lt;&#x2F;code&gt; function.&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;There is a literal backtick (&#96;) here.&#96;&#96;</span><br></pre></td></tr></table></figure>
+
+<p>这段语法会产生：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&lt;code&gt;There is a literal backtick (&#96;) here.&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>代码区段的起始和结束端都可以放入一个空白，起始端后面一个，结束端前面一个，这样你就可以在区段的一开始就插入反引号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A single backtick in a code span: &#96;&#96; &#96; &#96;&#96;</span><br><span class="line"></span><br><span class="line">A backtick-delimited string in a code span: &#96;&#96; &#96;foo&#96; &#96;&#96;</span><br></pre></td></tr></table></figure>
+
+<p>会产生：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;A single backtick in a code span: &lt;code&gt;&#96;&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;A backtick-delimited string in a code span: &lt;code&gt;&#96;foo&#96;&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在代码区段内，<code>&amp;</code> 和方括号<strong>都</strong>会被自动地转成 HTML 实体，这使得插入 HTML 原始码变得很容易，Markdown 会把下面这段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please don&#39;t use any &#96;&lt;blink&gt;&#96; tags.</span><br></pre></td></tr></table></figure>
+
+<p>转为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Please don&#39;t use any &lt;code&gt;&lt;blink&gt;&lt;&#x2F;code&gt; tags.&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>你也可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;&amp;#8212;&#96; is the decimal-encoded equivalent of &#96;&amp;mdash;&#96;.</span><br></pre></td></tr></table></figure>
+
+<p>以产生：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&lt;code&gt;&amp;#8212;&lt;&#x2F;code&gt; is the decimal-encoded</span><br><span class="line">equivalent of &lt;code&gt;&amp;mdash;&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。</p>
+<p>Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： <em>行内式</em>和<em>参考式</em>。</p>
+<p>行内式的图片语法看起来像是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![Alt text](&#x2F;path&#x2F;to&#x2F;img.jpg)</span><br><span class="line"></span><br><span class="line">![Alt text](&#x2F;path&#x2F;to&#x2F;img.jpg &quot;Optional title&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>详细叙述如下：</p>
+<ul>
+<li>一个惊叹号 <code>!</code></li>
+<li>接着一个方括号，里面放上图片的替代文字</li>
+<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上 选择性的 ‘title’ 文字。</li>
+</ul>
+<p>参考式的图片语法则长得像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Alt text][id]</span><br></pre></td></tr></table></figure>
+
+<p>「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[id]: url&#x2F;to&#x2F;image  &quot;Optional title attribute&quot;</span><br></pre></td></tr></table></figure>
+
+<p>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 `` 标签。</p>
+<hr>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h3><p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;http:&#x2F;&#x2F;example.com&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Markdown 会转为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;example.com&#x2F;&quot;&gt;http:&#x2F;&#x2F;example.com&#x2F;&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>邮址的自动链接也很类似，只是 Markdown 会先做一个编码转换的过程，把文字字符转成 16 进位码的 HTML 实体，这样的格式可以糊弄一些不好的邮址收集机器人，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;address@example.com&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Markdown 会转成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;</span><br><span class="line">&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;</span><br><span class="line">&amp;#109;&quot;&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;</span><br><span class="line">&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器里面，这段字串（其实是 <code>[address@example.com](mailto:address@example.com)</code>）会变成一个可以点击的「<a href="mailto:address@example.com">address@example.com</a>」链接。</p>
+<p>（这种作法虽然可以糊弄不少的机器人，但并不能全部挡下来，不过总比什么都不做好些。不管怎样，公开你的信箱终究会引来广告信件的。）</p>
+<h3 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h3><p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 `` 标签），你可以在星号的前面加上反斜杠：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\*literal asterisks\*</span><br></pre></td></tr></table></figure>
+
+<p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\   反斜线</span><br><span class="line">&#96;   反引号</span><br><span class="line">*   星号</span><br><span class="line">_   底线</span><br><span class="line">&#123;&#125;  花括号</span><br><span class="line">[]  方括号</span><br><span class="line">()  括弧</span><br><span class="line">#   井字号</span><br><span class="line">+   加号</span><br><span class="line">-   减号</span><br><span class="line">.   英文句点</span><br><span class="line">!   惊叹号</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/28/Markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" data-id="cksfytyef0019wkvjcvorb9w1" data-title="Markdown-语法说明" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2021首次蓝桥杯省赛总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/28/2021%E9%A6%96%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9B%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2021-04-28T09:00:48.000Z" itemprop="datePublished">2021-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/28/2021%E9%A6%96%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9B%E6%80%BB%E7%BB%93/">2021首次蓝桥杯省赛总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="https://i.loli.net/2021/06/20/AXmqQex3lVMNr2j.jpg" alt="7BLA_G@2_D_LY_TU_J6KC25.jpg"></p>
+<p>准备了一个月，210块买了个证书，哈哈哈，好垃圾</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/28/2021%E9%A6%96%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9B%E6%80%BB%E7%BB%93/" data-id="cksfytydp0001wkvjhatk8jb4" data-title="2021首次蓝桥杯省赛总结" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-C-语法基础和STL" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/26/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E5%92%8CSTL/" class="article-date">
+  <time class="dt-published" datetime="2021-04-25T23:47:23.000Z" itemprop="datePublished">2021-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/26/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E5%92%8CSTL/">C++语法基础和STL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="竞赛主要用c"><a href="#竞赛主要用c" class="headerlink" title="竞赛主要用c++?"></a>竞赛主要用c++?</h3><p>1.运行比较快</p>
+<p>2.STL</p>
+<h3 id="第一部分-基本语法"><a href="#第一部分-基本语法" class="headerlink" title="第一部分:基本语法"></a>第一部分:基本语法</h3><h4 id="1-体验一下c"><a href="#1-体验一下c" class="headerlink" title="1.体验一下c++"></a>1.体验一下c++</h4><h5 id="1-1输出helloWorld"><a href="#1-1输出helloWorld" class="headerlink" title="1.1输出helloWorld"></a>1.1输出helloWorld</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;  <span class="comment">//输出  换行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="1-2读入a-b计算a-b"><a href="#1-2读入a-b计算a-b" class="headerlink" title="1.2读入a,b计算a+b"></a>1.2读入a,b计算a+b</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line"><span class="comment">//堆区 初始0  全局变量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//栈区 不定为0</span></span><br><span class="line">    <span class="comment">//cout &lt;&lt; &quot;hello world&quot; &lt;&lt; endl;  //输出  换行</span></span><br><span class="line">    <span class="comment">//流   &gt;&gt; 代表方向</span></span><br><span class="line">    cin &gt;&gt; a;</span><br><span class="line">    cin &gt;&gt; b; <span class="comment">//输入</span></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; <span class="string">&quot; + &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot; = &quot;</span> &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意变量统统定义在main外</strong></p>
+<p><img src="D:\Desktop\DSA\新生.assets\image-20210111161532525.png" alt="image-20210111161532525"></p>
+<h4 id="2-位运算相关"><a href="#2-位运算相关" class="headerlink" title="2.位运算相关"></a>2.位运算相关</h4><p>都是在<strong>二进制</strong>下进行运算</p>
+<table>
+<thead>
+<tr>
+<th>位运算符</th>
+<th>功能</th>
+<th>例子</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>与运算</td>
+<td>3(11)&amp;2(10)=2(10)</td>
+<td>x&amp;1  看x二进制的尾位是否是1,快速幂</td>
+</tr>
+<tr>
+<td>|</td>
+<td>或运算</td>
+<td>3(11)|2(10)=3(11)</td>
+<td>x|1 相当于在尾位+1</td>
+</tr>
+<tr>
+<td>^</td>
+<td>异或运算</td>
+<td>3(11)^2(10)=1(01)</td>
+<td>x^1 把尾位0 -&gt; 1, 1 -&gt; 0</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移操作</td>
+<td>x&gt;&gt;1相当于给x/2</td>
+<td></td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移操作</td>
+<td>x&lt;&lt;2相当于让x乘以4</td>
+<td></td>
+</tr>
+<tr>
+<td>~</td>
+<td>按位取反</td>
+<td>~11 = 00</td>
+<td><code>while(~scanf(&quot;%d&quot;,&amp;n))&#123;&#125;</code></td>
+</tr>
+</tbody></table>
+<p>x&gt;&gt;1|1;    x/2+1</p>
+<p>x + y  &gt;&gt; 1;   (x + y) / 2</p>
+<p><strong>不用管直接加()搞定</strong></p>
+<p><img src="D:\Desktop\DSA\新生.assets\20180721141349965" alt="这里写图片描述"></p>
+<h4 id="3-c-语法"><a href="#3-c-语法" class="headerlink" title="3.c++语法"></a>3.c++语法</h4><h5 id="3-1头文件"><a href="#3-1头文件" class="headerlink" title="3.1头文件"></a>3.1头文件</h5><p>c++的正常用,要用c的去掉.h前边加c. 例如:<code>stdio.h</code> –&gt;<code>cstdio</code></p>
+<h5 id="3-2结构体"><a href="#3-2结构体" class="headerlink" title="3.2结构体"></a>3.2结构体</h5><p>c要一个struct, c++就直接用</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span>  <span class="comment">//关键字 名字</span></span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">node p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;  <span class="comment">//</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    p.x = <span class="number">1</span>;</span><br><span class="line">    p.y = <span class="number">1</span>;</span><br><span class="line">    cout &lt;&lt; p.x &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; p.y &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="3-3运算符重载"><a href="#3-3运算符重载" class="headerlink" title="3.3运算符重载"></a>3.3运算符重载</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// firend </span></span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (node a, node b) &#123;</span><br><span class="line">        <span class="keyword">return</span> a.x &lt; b.x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> flag, vis[<span class="number">100</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">1</span>, y = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; y) cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">    node a, b;</span><br><span class="line">    <span class="keyword">if</span>(a &lt; b) cout &lt;&lt; <span class="string">&quot;no&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3-4布尔类型"><a href="#3-4布尔类型" class="headerlink" title="3.4布尔类型"></a>3.4布尔类型</h5><p><code>bool flag = true</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">if</span>(flag) cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3-5引用类型"><a href="#3-5引用类型" class="headerlink" title="3.5引用类型"></a>3.5引用类型</h5><p><img src="D:\Desktop\DSA\新生.assets\image-20210117103531945.png" alt="image-20210117103531945"></p>
+<p>代替指针 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>* x, <span class="keyword">int</span>* y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = *x;</span><br><span class="line">    *x = *y;</span><br><span class="line">    *y = t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>, b = <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>&amp; p = a;</span><br><span class="line">    swap(&amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d&quot;</span>, a, b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//复制一份 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>&amp; x, <span class="keyword">int</span>&amp; y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>, b = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">swap</span>(a, b);</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="4-输入说明"><a href="#4-输入说明" class="headerlink" title="4.输入说明"></a>4.输入说明</h4><p><strong>注意:</strong>  scanf(),printf()  和 cin , cout (1000) 不要混用</p>
+<ul>
+<li>就一组数据,直接读</li>
+</ul>
+<ul>
+<li>告诉有n组数据</li>
+</ul>
+<ul>
+<li>有多组数据,以某一个标志结束(0)</li>
+</ul>
+<ul>
+<li>只告诉有多组数据.</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; n) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// EOF = -1</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//没有读到数了 -1  </span></span><br><span class="line">    <span class="comment">//~取反</span></span><br><span class="line">    <span class="comment">// -1   111111</span></span><br><span class="line">    <span class="comment">// ~ 1111  0000</span></span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n)) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="第二部分-标准模板库STL"><a href="#第二部分-标准模板库STL" class="headerlink" title="第二部分:标准模板库STL"></a>第二部分:标准模板库STL</h3><h4 id="1-vector"><a href="#1-vector" class="headerlink" title="1.vector"></a>1.vector</h4><h5 id="1-1vector的定义"><a href="#1-1vector的定义" class="headerlink" title="1.1vector的定义"></a>1.1vector的定义</h5><p>向量  <strong>变长数组</strong></p>
+<p>头文件<code>#include&lt;vector&gt;</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">typename</span>&gt; v, v1[<span class="number">100</span>];</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-2迭代器"><a href="#1-2迭代器" class="headerlink" title="1.2迭代器"></a>1.2迭代器</h5><p>相当于是指针</p>
+<p><code>vector&lt;typename&gt;::iterator it;</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; v, a[<span class="number">100</span>];</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">        v.<span class="built_in">push_back</span>(i); <span class="comment">//push_back(i);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; v[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(it = v.<span class="built_in">begin</span>(); it != v.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">        cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-3相关的函数"><a href="#1-3相关的函数" class="headerlink" title="1.3相关的函数"></a>1.3相关的函数</h5><ul>
+<li><p>在后边添加一个  <strong>push_back(x)</strong></p>
+</li>
+<li><p>删除尾元素 <strong>pop_back()</strong></p>
+</li>
+<li><p>大小 <strong>size()</strong></p>
+</li>
+<li><p>清空 <strong>clear()</strong></p>
+</li>
+<li><p>intsert(it, x)   O(n)</p>
+</li>
+<li><p>erase(it)   erase(first, last)   [first, last)</p>
+</li>
+<li><p>获取第一个元素 <code>cout &lt;&lt; v.front() &lt;&lt; v[0] &lt;&lt; *v.begin(); </code></p>
+</li>
+<li><p>获取最后一个元素    <code>cout &lt;&lt; v.back() &lt;&lt; v[v.size()-1] &lt;&lt; *--v.end();</code></p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; v, v1[<span class="number">100</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//v.pop_back();</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//v.clear();</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//begin()</span></span><br><span class="line">    cout &lt;&lt; v.<span class="built_in">front</span>() &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; v[<span class="number">0</span>] &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *v.<span class="built_in">begin</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// [   )</span></span><br><span class="line">    cout &lt;&lt; v.<span class="built_in">back</span>() &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; v[v.<span class="built_in">size</span>() - <span class="number">1</span>] &lt;&lt; <span class="string">&quot; &quot;</span>  &lt;&lt; *--v.<span class="built_in">end</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; v[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="1-4遍历输出"><a href="#1-4遍历输出" class="headerlink" title="1.4遍历输出"></a>1.4遍历输出</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; v, v1[<span class="number">100</span>];</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">5</span>);</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//下标</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; v[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">for</span>(it = v.<span class="built_in">begin</span>(); it != v.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">        cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//auto</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i = v.<span class="built_in">begin</span>(); i != v.<span class="built_in">end</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; *i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> x : v) &#123;</span><br><span class="line">        cout &lt;&lt; x &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-set集合"><a href="#2-set集合" class="headerlink" title="2.set集合"></a>2.set集合</h4><h5 id="2-1set定义"><a href="#2-1set定义" class="headerlink" title="2.1set定义"></a>2.1set定义</h5><p>集合  特点:<strong>自动排序(<strong>从小到大)和</strong>去重</strong></p>
+<p>头文件<code>#include&lt;set&gt;</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set&lt;<span class="keyword">typename</span>&gt; st;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-2相关函数"><a href="#2-2相关函数" class="headerlink" title="2.2相关函数"></a>2.2相关函数</h5><ul>
+<li><p>插入 <strong>insert()</strong></p>
+</li>
+<li><p>查找 <strong>find()</strong></p>
+</li>
+<li><p><strong>size()</strong></p>
+</li>
+<li><p><strong>clear()</strong></p>
+</li>
+<li><p>erase(it)  erase(value)   erase(first, last) [first, last)</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">set&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">1</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">7</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">3</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">3</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(set&lt;<span class="keyword">int</span>&gt;::iterator it = st.<span class="built_in">begin</span>(); it != st.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">        cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> it = st.<span class="built_in">begin</span>(); it != st.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">        cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> x : st) &#123;</span><br><span class="line">        cout &lt;&lt; x &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(st.<span class="built_in">find</span>(<span class="number">4</span>) == st.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; st.<span class="built_in">size</span>() &lt;&lt; endl;</span><br><span class="line">    st.<span class="built_in">erase</span>(st.<span class="built_in">begin</span>());</span><br><span class="line">    cout &lt;&lt; st.<span class="built_in">size</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line">set&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//自动排序(升序)  去重</span></span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">1</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">1</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">4</span>);</span><br><span class="line">    st.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">for</span>(set&lt;<span class="keyword">int</span>&gt;::iterator it = st.<span class="built_in">begin</span>(); it != st.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">        cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; st.<span class="built_in">size</span>() &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    st.<span class="built_in">clear</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-string"><a href="#3-string" class="headerlink" title="3.string"></a>3.string</h4><h5 id="3-1定义"><a href="#3-1定义" class="headerlink" title="3.1定义"></a>3.1定义</h5><p>字符串</p>
+<h5 id="3-2相关操作"><a href="#3-2相关操作" class="headerlink" title="3.2相关操作"></a>3.2相关操作</h5><ul>
+<li><strong>+=</strong></li>
+<li><strong>== != &lt; &lt;= &gt; &gt;=</strong> </li>
+<li><strong>length()  / size()</strong></li>
+<li><strong>find(str)  find(str, pos)   没有返回-1</strong></li>
+<li>截取返<strong>回 substr(pos, len)  substr(pos)</strong></li>
+<li>replace(pos, len, str)   replace(it1, it2, str) </li>
+<li>clear()</li>
+<li>insert(pos, string)   insert(it, it1, it2)</li>
+<li>erase(it)  erase(first, last)</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line">string s, s1;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    s = <span class="string">&quot;abcda&quot;</span>;</span><br><span class="line">    s += <span class="string">&#x27;c&#x27;</span>;</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    s1 = <span class="string">&quot;cd&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span>(s &lt; s1) cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; s.<span class="built_in">length</span>() &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; s.<span class="built_in">size</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(s.<span class="built_in">find</span>(<span class="string">&quot;a&quot;</span>) != <span class="number">-1</span>) cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">if</span>(s.<span class="built_in">find</span>(<span class="string">&quot;a&quot;</span>, <span class="number">2</span>) == <span class="number">-1</span>) cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; s.<span class="built_in">substr</span>(<span class="number">0</span>, <span class="number">2</span>) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; s.<span class="built_in">substr</span>(<span class="number">3</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">    s.<span class="built_in">replace</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="string">&quot;ffff&quot;</span>);</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    s.<span class="built_in">replace</span>(s.<span class="built_in">begin</span>() + <span class="number">1</span>, s.<span class="built_in">begin</span>() + <span class="number">3</span>, <span class="string">&quot;dddd&quot;</span> );</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>   <code>#include&lt;cctype&gt;</code></p>
+<ul>
+<li>isalpha() 判断字符ch是否为英文字母,若为英文字母,返回非0(小写字母为2,大写字母为1).若不是字母,返回0.</li>
+<li>tolower()  toupper() 功能是把字母字符转换成小写，非字母字符不做出处理。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41162823/article/details/80172379">参考</a> </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">string s, s1;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    s = <span class="string">&quot;abcd&quot;</span>;</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">    s += <span class="string">&quot;f&quot;</span>;</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    s1 = <span class="string">&quot;bb&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span>(s &lt; s1) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>  cout &lt;&lt; <span class="string">&quot;no&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; s.<span class="built_in">length</span>() &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; s.<span class="built_in">size</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(s.<span class="built_in">find</span>(<span class="string">&quot;abc&quot;</span>) != <span class="number">-1</span>) &#123;</span><br><span class="line">        cout &lt;&lt; s.<span class="built_in">find</span>(<span class="string">&quot;abc&quot;</span>) &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; s.<span class="built_in">find</span>(<span class="string">&quot;abc&quot;</span>, <span class="number">1</span>) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(s.<span class="built_in">find</span>(<span class="string">&quot;ddd&quot;</span>) == <span class="number">-1</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">    s.<span class="built_in">replace</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="string">&quot;ffff&quot;</span>);</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">    s.<span class="built_in">replace</span>(s.<span class="built_in">find</span>(<span class="string">&quot;f&quot;</span>), <span class="number">1</span>, <span class="string">&quot;e&quot;</span>);</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    s.<span class="built_in">clear</span>();</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; <span class="string">&quot;kk&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    s.<span class="built_in">insert</span>(<span class="number">0</span>, <span class="string">&quot;ff&quot;</span>);</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    s.<span class="built_in">insert</span>(s.<span class="built_in">begin</span>() + <span class="number">1</span>, s1.<span class="built_in">begin</span>(), s1.<span class="built_in">end</span>());</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">    s.<span class="built_in">erase</span>(s.<span class="built_in">begin</span>() + <span class="number">1</span>, s.<span class="built_in">end</span>());</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3-3输入时需要注意"><a href="#3-3输入时需要注意" class="headerlink" title="3.3输入时需要注意"></a>3.3输入时需要注意</h5><p><code>getline(cin, s[i]);</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">string s[<span class="number">10</span>], s1;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   </span><br><span class="line">        </span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">getchar</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">getline</span>(cin, s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        cout &lt;&lt; s[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3-4-int和string互换"><a href="#3-4-int和string互换" class="headerlink" title="3.4 int和string互换"></a>3.4 int和string互换</h5><ul>
+<li>int -&gt;string   to_string()</li>
+<li>string -&gt; int    stoi()</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    string s = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="built_in">stoi</span>(s);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">24</span>;</span><br><span class="line">    string t = <span class="built_in">to_string</span>(m);</span><br><span class="line">    cout &lt;&lt; t &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="4-map"><a href="#4-map" class="headerlink" title="4.map"></a>4.map</h4><h5 id="4-1定义"><a href="#4-1定义" class="headerlink" title="4.1定义"></a>4.1定义</h5><p>映射  </p>
+<p>key -&gt; value</p>
+<p><code>#include&lt;map&gt;</code>     </p>
+<blockquote>
+<p>map&lt;typename1, typename2&gt; mp;</p>
+</blockquote>
+<h5 id="4-2相关操作"><a href="#4-2相关操作" class="headerlink" title="4.2相关操作"></a>4.2相关操作</h5><ul>
+<li>find(key) </li>
+<li>size()</li>
+<li>clear()</li>
+<li>erase(it)   erase(key)</li>
+</ul>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; mp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    mp[<span class="string">&#x27;a&#x27;</span>] = <span class="number">11</span>;</span><br><span class="line">    mp[<span class="string">&#x27;b&#x27;</span>] = <span class="number">12</span>;</span><br><span class="line">    cout &lt;&lt; mp[<span class="string">&#x27;a&#x27;</span>] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span>(it = mp.<span class="built_in">begin</span>(); it != mp.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">        cout &lt;&lt; it-&gt;first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    it = mp.<span class="built_in">find</span>(<span class="string">&#x27;b&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; it-&gt;first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(mp.<span class="built_in">find</span>(<span class="string">&#x27;c&#x27;</span>) == mp.<span class="built_in">end</span>()) cout &lt;&lt; <span class="string">&quot;yes&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    mp.<span class="built_in">erase</span>(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;-----&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span>(it = mp.<span class="built_in">begin</span>(); it != mp.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">        cout &lt;&lt; it-&gt;first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="5-队列"><a href="#5-队列" class="headerlink" title="5.队列"></a>5.队列</h4><h5 id="5-1-queue"><a href="#5-1-queue" class="headerlink" title="5.1 queue"></a>5.1 queue</h5><h6 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h6><p>队列</p>
+<p><img src="D:\Desktop\DSA\新生.assets\image-20210117114022104.png" alt="image-20210117114022104"></p>
+<h6 id="2-相关操作"><a href="#2-相关操作" class="headerlink" title="2.相关操作"></a>2.相关操作</h6><ul>
+<li>push()</li>
+<li>front() back()</li>
+<li>pop()</li>
+<li>empty() 是否为空</li>
+<li>size() 返回大小</li>
+</ul>
+<h5 id="5-2priority-queue"><a href="#5-2priority-queue" class="headerlink" title="5.2priority_queue"></a>5.2priority_queue</h5><h6 id="1-定义-1"><a href="#1-定义-1" class="headerlink" title="1.定义"></a>1.定义</h6><p>优先队列 会根据优先级来排好序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line">priority_queue&lt; <span class="keyword">typename</span> &gt; q;</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="3-相关的操作"><a href="#3-相关的操作" class="headerlink" title="3.相关的操作"></a>3.相关的操作</h6><ul>
+<li>psuh()</li>
+<li>top() 取队首</li>
+<li>pop() </li>
+<li>empty()</li>
+<li>size()</li>
+</ul>
+<h6 id="4-元素的优先级设置"><a href="#4-元素的优先级设置" class="headerlink" title="4.元素的优先级设置"></a>4.元素的优先级设置</h6><p>4.1基本类型的优先级设置</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*例如:int double char */</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">1</span></span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>&gt; p;	<span class="comment">//默认的大顶堆,就是先输出大数据 &quot;5 4 3 2 1&quot;</span></span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>, vector&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; p; 	<span class="comment">//小顶堆,先输出小数据 &quot;1 2 3 4 5&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>4.2结构体的优先级设置</p>
+<p>重载了<code>&lt;</code>符号</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">msg</span>&#123;</span></span><br><span class="line">    </span><br><span class="line">    string messeage;</span><br><span class="line">    <span class="keyword">int</span> priority; 	<span class="comment">//优先级变量</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//重载</span></span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (msg a, msg b) &#123;</span><br><span class="line">        <span class="keyword">return</span> a.priority &gt; b.priority;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">priority_queue&lt;msg&gt; pq;           </span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="5-3deque"><a href="#5-3deque" class="headerlink" title="5.3deque"></a>5.3deque</h5><h6 id="1-定义-2"><a href="#1-定义-2" class="headerlink" title="1.定义"></a>1.定义</h6><p>双向队列</p>
+<h6 id="2相关操作"><a href="#2相关操作" class="headerlink" title="2相关操作"></a>2相关操作</h6><ul>
+<li>pop_back() 删除尾部的元素</li>
+<li>pop_front() 删除头部的元素</li>
+<li>push_back() 在尾部加入一个元素</li>
+<li>push_front() 在头部加入一个元素 </li>
+<li>back() 返回最后一个元素 </li>
+<li>front() 返回第一个元素的引用</li>
+</ul>
+<h4 id="6-栈"><a href="#6-栈" class="headerlink" title="6.栈"></a>6.栈</h4><h5 id="6-1定义"><a href="#6-1定义" class="headerlink" title="6.1定义"></a>6.1定义</h5><p><img src="D:\Desktop\DSA\新生.assets\image-20210117121606968.png" alt="image-20210117121606968"></p>
+<h5 id="6-2操作"><a href="#6-2操作" class="headerlink" title="6.2操作"></a>6.2操作</h5><ul>
+<li>push() </li>
+<li>top()</li>
+<li>pop()</li>
+<li>empty()</li>
+<li>size()</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;   <span class="comment">//指定命名空间</span></span><br><span class="line"></span><br><span class="line">stack&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    st.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    st.<span class="built_in">push</span>(<span class="number">5</span>);</span><br><span class="line">    st.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; st.<span class="built_in">top</span>() &lt;&lt; endl;</span><br><span class="line">    st.<span class="built_in">pop</span>();</span><br><span class="line">    cout &lt;&lt; st.<span class="built_in">top</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="7-algorithm相关的"><a href="#7-algorithm相关的" class="headerlink" title="7.algorithm相关的"></a>7.algorithm相关的</h4><h5 id="1-1-sort"><a href="#1-1-sort" class="headerlink" title="1.1 sort()"></a>1.1 sort()</h5><p>sort(begin, end, cmp(非必填) );</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt; y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">8</span>&#125;;</span><br><span class="line">    <span class="built_in">sort</span>(a, a + <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        cout &lt;&lt; a[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">4</span>);</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">5</span>);</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; v[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//分数从大到小, id从小到大</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a, node b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a.scort != b.score) &#123;</span><br><span class="line">        <span class="keyword">return</span> a.score &gt; b.score;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a.id &lt; b.id;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-2常用的函数"><a href="#1-2常用的函数" class="headerlink" title="1.2常用的函数"></a>1.2常用的函数</h5><ul>
+<li>max() min()</li>
+<li>swap()</li>
+<li>abs() 绝对值</li>
+<li>fill()   memset()</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">int</span> a[N], b[N][N];</span><br><span class="line"><span class="built_in">fill</span>(a, a + N, <span class="number">-1</span>);</span><br><span class="line">   <span class="built_in">fill</span>(b[<span class="number">0</span>], b[<span class="number">0</span>] + N * N, <span class="number">-1</span>);</span><br><span class="line">   <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(a));</span><br></pre></td></tr></table></figure>
+
+
+
+<p>fill（）中 ，它的原理是把那一块单元赋成指定的值，也就是说任何值都可以<br>memset（），头文件<code>#include&lt;cstring&gt;</code>则是将s所指向的某一块内存中的每个字节的内容全部设置为ch指定的ASCII值，即0 、1,   只能初始为0， -1</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xishisugan/article/details/54810119">memset()原理</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/26/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E5%92%8CSTL/" data-id="cksfytydu0005wkvj2tiyhai9" data-title="C++语法基础和STL" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/25/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2021-04-25T14:52:14.119Z" itemprop="datePublished">2021-04-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/25/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/25/hello-world/" data-id="cksfytye8000swkvjar2jen5w" data-title="Hello World" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag">摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" rel="tag">汇编语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mybatis/" style="font-size: 20px;">Mybatis</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 10px;">摄影</a> <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" style="font-size: 13.33px;">汇编语言</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 16.67px;">计算机组成原理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/08/17/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5DI%E7%9A%84%E6%96%B9%E5%BC%8F/">Spring依赖注入DI的方式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/Mybatis%E5%8A%A8%E6%80%81sql/">Mybatis动态sql</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/Mybatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%92%8C%E5%A4%9A%E5%AF%B9%E4%B8%80%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2/">Mybatis一对多和多对一关联查询</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/Mybatis%E4%B8%AD%E7%9A%84#%7B%7D%E5%92%8C$%7B%7D%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/">Mybatis中的#{}和${}符号的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/14/LOG4J%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">LOG4J配置文件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Pekaboo<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
