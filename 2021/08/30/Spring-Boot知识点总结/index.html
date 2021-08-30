@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spring Boot知识点总结 | Peekaboo的个人网站 - Pekaboo's Personal Website</title><meta name="keywords" content="Spring Boot"><meta name="author" content="Pekaboo"><meta name="copyright" content="Pekaboo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="核心@ConfigurationProperties和@Value注入比较    @ConfigurationProperties @Value    功能 批量注入配置文件中的属性 单个指定   松散绑定 支持 不支持   SpEL 不支持 支持   JSR303 支持 不支持   复杂类型封装 支持 不支持    SpEL（Spring Expression Language），即Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot知识点总结">
+<meta property="og:url" content="http://example.com/2021/08/30/Spring-Boot%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Peekaboo的个人网站 - Pekaboo&#39;s Personal Website">
+<meta property="og:description" content="核心@ConfigurationProperties和@Value注入比较    @ConfigurationProperties @Value    功能 批量注入配置文件中的属性 单个指定   松散绑定 支持 不支持   SpEL 不支持 支持   JSR303 支持 不支持   复杂类型封装 支持 不支持    SpEL（Spring Expression Language），即Spring">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/Nathan-zhao/clouding/raw/master/20210830233642.jpg">
+<meta property="article:published_time" content="2021-08-30T15:30:40.000Z">
+<meta property="article:modified_time" content="2021-08-30T15:37:06.220Z">
+<meta property="article:author" content="Pekaboo">
+<meta property="article:tag" content="Spring Boot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Nathan-zhao/clouding/raw/master/20210830233642.jpg"><link rel="shortcut icon" href="/img/plane.png"><link rel="canonical" href="http://example.com/2021/08/30/Spring-Boot%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Spring Boot知识点总结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-08-30 23:37:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><style type="text/css">.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{left:-66px!important}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover{left:0!important}</style><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/04/26/TZkfuYwCpMGy9qg.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">32</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Photo/"><i class="fa-fw fas fa-camera"></i><span> Photo</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/Nathan-zhao/clouding/raw/master/20210830233642.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Peekaboo的个人网站 - Pekaboo's Personal Website</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Photo/"><i class="fa-fw fas fa-camera"></i><span> Photo</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Spring Boot知识点总结<a class="post-edit-link" href="null_posts/Spring-Boot知识点总结.md" title="Edited on" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-30T15:30:40.000Z" title="Created 2021-08-30 23:30:40">2021-08-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-08-30T15:37:06.220Z" title="Updated 2021-08-30 23:37:06">2021-08-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>8min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Spring Boot知识点总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h1><h2 id="ConfigurationProperties和-Value注入比较"><a href="#ConfigurationProperties和-Value注入比较" class="headerlink" title="@ConfigurationProperties和@Value注入比较"></a>@ConfigurationProperties和@Value注入比较</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>@ConfigurationProperties</th>
+<th>@Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>功能</td>
+<td>批量注入配置文件中的属性</td>
+<td>单个指定</td>
+</tr>
+<tr>
+<td>松散绑定</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>SpEL</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>JSR303</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>复杂类型封装</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>SpEL（Spring Expression Language），即Spring表达式语言。</p>
+<p>JSR是Java Specification Requests的缩写，意思是Java 规范提案。</p>
+</blockquote>
+<h2 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a>@PropertySource</h2><p>加载指定的配置文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PropertySource(value = &#123;&quot;classpath:xx.yml&quot;&#125;)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ImportResource"><a href="#ImportResource" class="headerlink" title="@ImportResource"></a>@ImportResource</h2><p>导入Spring的配置文件，让配置文件中的内容生效</p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h2><p>指明当前类是一个配置类，代替之前的Spring配置文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAppConfig</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 将方法的返回值添加到容器中，容器id是方法名</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HelloService <span class="title">helloService</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> HelloService();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h2><p>相当于</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@Controller</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Profile"><a href="#Profile" class="headerlink" title="Profile"></a>Profile</h2><h3 id="多配置文件"><a href="#多配置文件" class="headerlink" title="多配置文件"></a>多配置文件</h3><p><code>application-dev.properties</code></p>
+<p><code>application-test.properties</code></p>
+<p><code>application-pro.properties</code></p>
+<p>激活：配置文件中指定</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.profile.active</span>=<span class="string">dev</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="yml多文档块"><a href="#yml多文档块" class="headerlink" title="yml多文档块"></a>yml多文档块</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8081</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">config:</span></span><br><span class="line">    <span class="attr">activate:</span></span><br><span class="line">      <span class="attr">on-profile:</span> <span class="string">dev</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8082</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">config:</span></span><br><span class="line">    <span class="attr">activate:</span></span><br><span class="line">      <span class="attr">on-profile:</span> <span class="string">test</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8083</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">config:</span></span><br><span class="line">    <span class="attr">activate:</span></span><br><span class="line">      <span class="attr">on-profile:</span> <span class="string">pro</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># 激活：</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">profiles:</span></span><br><span class="line">    <span class="attr">active:</span> <span class="string">dev</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--spring.profile.active&#x3D;test</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟机参数"><a href="#虚拟机参数" class="headerlink" title="虚拟机参数"></a>虚拟机参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dspring.profile.active&#x3D;pro</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置文件加载位置"><a href="#配置文件加载位置" class="headerlink" title="配置文件加载位置"></a>配置文件加载位置</h2><p>–file:./config/<br>–file:./<br>–classpath:/config/<br>–classpath:/<br>优先级由高到底，高优先级的配置会<strong>覆盖</strong>低优先级的配置；</p>
+<p>项目打包后，还可以使用命令行参数指定配置文件的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--spring.config.location&#x3D;D:&#x2F;xxx&#x2F;xxx</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+
+<h3 id="外部配置文件"><a href="#外部配置文件" class="headerlink" title="外部配置文件"></a>外部配置文件</h3><p><em>优先级从高到低</em>：</p>
+<ol>
+<li><strong>命令行参数。</strong></li>
+<li>JNDI 属性来自<code>java:comp/env</code>.</li>
+<li>Java 系统属性 ( <code>System.getProperties()</code>)。</li>
+<li>操作系统环境变量。</li>
+<li><code>RandomValuePropertySource</code>，只有在性<code>random.*</code>。</li>
+<li><strong>打包在 jar 外的<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#boot-features-external-config-profile-specific-properties">特定于配置文件的应用程序属性</a>（<code>application-&#123;profile&#125;.properties </code> 和 yml 配置文件）</strong></li>
+<li><strong>打包在 jar 中<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#boot-features-external-config-profile-specific-properties">的特定于配置文件的应用程序属性</a>（<code>application-&#123;profile&#125;.properties</code> 和 yml 配置文件）</strong></li>
+<li><strong>打包 jar 之外的应用程序属性（<code>application.properties</code>和 yml 配置文件）。</strong></li>
+<li><strong>打包在 jar 中的应用程序属性（<code>application.properties</code>和 yml 配置文件）。</strong></li>
+<li><code>@Configuration</code>注释类上的<code>@PropertySource</code>。</li>
+<li>默认属性（使用 指定<code>SpringApplication.setDefaultProperties</code>）。</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#boot-features-external-config">https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#boot-features-external-config</a></p>
+</blockquote>
+<h2 id="自动配置原理"><a href="#自动配置原理" class="headerlink" title="自动配置原理"></a>自动配置原理</h2><p>Spring boot启动时加载主配置类，开启了自动配置功能 <code>@EnableAutoConfiguration</code></p>
+<p><code>@EnableAutoConfiguration</code> </p>
+<p><code>@AutoConfigurationPackage</code></p>
+<p><code>@Import(AutoConfigurationPackages.Registrar.class)</code>  <code>@Import(AutoConfigurationImportSelector.class)</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Import(AutoConfigurationPackages.Registrar.class)</span>	<span class="comment">// 给容器导入组件</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> AutoConfigurationPackage &#123;</span><br><span class="line"><span class="comment">// 利用Register给容器导入一系列组件</span></span><br><span class="line"><span class="comment">// 将指定包下的所有组件导入进来</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>后究 ……</p>
+<h3 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span>	<span class="comment">//表示这是一个配置类，给容器添加组件</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties(ServerProperties.class)</span>	<span class="comment">//启动ServerProperties类的ConfigurationProperties功能，将配置文件中对应的值和ServerProperties的属性绑定并加入ioc</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//@Conditional根据不同的条件，如果满足指定的条件，配置类里的配置就会生效</span></span><br><span class="line"><span class="meta">@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)</span></span><br><span class="line"><span class="comment">//判断当前应用是否是web应用</span></span><br><span class="line"><span class="meta">@ConditionalOnClass(CharacterEncodingFilter.class)</span></span><br><span class="line"><span class="comment">//判断当前项目有没有CharacterEncodingFilter类</span></span><br><span class="line"><span class="meta">@ConditionalOnProperty(prefix = &quot;server.servlet.encoding&quot;, value = &quot;enabled&quot;, matchIfMissing = true)</span></span><br><span class="line"><span class="comment">//判断配置文件中有没有server.servlet.encoding.enabled属性，没有默认值为true</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpEncodingAutoConfiguration</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;server&quot;, ignoreUnknownFields = true)</span>	<span class="comment">//从配置文件中获取指定的值和bean的属性绑定</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServerProperties</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>配置文件中，配置的属性来源于xxxProperties类</p>
+</li>
+<li><p>xxxAutoConfiguration：自动配置类，给容器添加组件</p>
+</li>
+<li><p>xxxProperties：封装配置文件中的属性</p>
+</li>
+<li><p>ConditionalOnxxx通过<code>@Conditional(OnClassCondition.class)</code>实现</p>
+</li>
+<li><p>自动配置类必须在一定条件下生效，配置文件中<code>debug=true</code>打印AUTO-CONFIGURATION REPORT</p>
+</li>
+</ul>
+<h3 id="Conditional的扩展注解"><a href="#Conditional的扩展注解" class="headerlink" title="@Conditional的扩展注解"></a>@Conditional的扩展注解</h3><ul>
+<li>class条件注解</li>
+</ul>
+<p>@ConditionalOnClass：某个class位于类路径上，才会实例化一个Bean。</p>
+<p>@ConditionalOnMissingClass：某个class类路径上不存在的时候，才会实例化一个Bean。</p>
+<ul>
+<li>Bean条件注解</li>
+</ul>
+<p>@ConditionalOnBean：当容器中有指定Bean的条件下进行实例化。</p>
+<p>@ConditionalOnMissingBean：当容器里没有指定Bean的条件下进行实例化。</p>
+<ul>
+<li>属性条件注解</li>
+</ul>
+<p>@ConditionalOnProperty：当指定的属性有指定的值时进行实例化。</p>
+<ul>
+<li>Resource条件注解</li>
+</ul>
+<p>@ConditionalOnResource：当类路径下有指定的资源时触发实例化。</p>
+<ul>
+<li>web条件注解</li>
+</ul>
+<p>@ConditionalOnNotWebApplication：不是web应用，才会实例化一个Bean。</p>
+<p>@ConditionalOnWebApplication：当项目是一个Web项目时进行实例化。</p>
+<ul>
+<li>表达式条件注解</li>
+</ul>
+<p>@ConditionalOnExpression：基于SpEL表达式的条件判断，当表达式为true的时候，才会实例化一个Bean。</p>
+<ul>
+<li></li>
+</ul>
+<p>@ConditionalOnJava：当JVM版本为指定的版本范围时触发实例化。<br>@ConditionalOnJndi：在JNDI存在的条件下触发实例化。<br>@ConditionalOnSingleCandidate：当指定的Bean在容器中只有一个，或者有多个但是指定了首选的Bean时触发实例化。</p>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><table>
+<thead>
+<tr>
+<th align="center">日志门面</th>
+<th align="center">日志实现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">JCL(Jakarta Commons Logging)   SLF4J(simple logging Facade for java)    jboss-logging</td>
+<td align="center">log4j    JUL(java.util.logging)    Log4j2    Logback</td>
+</tr>
+</tbody></table>
+<p>Spring Boot 选用 <code>SLF4J</code> 和 <code>Logback</code></p>
+<p><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210830015924.png"></p>
+<p><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210830020738.png"></p>
+<p>SpringBoot使用它来做日志功能</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.5.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>底层依赖关系</p>
+<p><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210830021430.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//记录器</span></span><br><span class="line">Logger logger = LoggerFactory.getLogger(getClass());</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//日志级别递增</span></span><br><span class="line">    logger.trace(<span class="string">&quot;trace...&quot;</span>);</span><br><span class="line">    logger.debug(<span class="string">&quot;debug...&quot;</span>);</span><br><span class="line">    <span class="comment">//Spring Boot默认日志级别info</span></span><br><span class="line">    logger.info(<span class="string">&quot;info...&quot;</span>);</span><br><span class="line">    logger.warn(<span class="string">&quot;warn...&quot;</span>);</span><br><span class="line">    logger.error(<span class="string">&quot;error...&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="devtools实现热部署"><a href="#devtools实现热部署" class="headerlink" title="devtools实现热部署"></a>devtools实现热部署</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>深层原理是使用了两个ClassLoader，一个Classloader加载那些不会改变的类（第三方Jar包），另一个ClassLoader加载会更改的类，称为restart ClassLoader,这样在有代码更改的时候，原来的restart ClassLoader 被丢弃，重新创建一个restart ClassLoader，由于需要加载的类相比较少，所以实现了较快的重启时间。</p>
+<h2 id="Configuring-the-Annotation-Processor"><a href="#Configuring-the-Annotation-Processor" class="headerlink" title="Configuring the Annotation Processor"></a>Configuring the Annotation Processor</h2><p>To use the processor, include a dependency on spring-boot-configuration-processor.<br>With Maven the dependency should be declared as optional, as shown in the following example:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//打包时排除</span><br><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">excludes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclude</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclude</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">excludes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h2><ul>
+<li><p>By default, Spring Boot serves static content from a directory called <code>/static</code> (or <code>/public</code> or<br><code>/resources</code> or <code>/META-INF/resources</code>) in the classpath or from the root of the ServletContext.</p>
+</li>
+<li></li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">mvc:</span></span><br><span class="line">    <span class="attr">static-path-pattern:</span> <span class="string">/res/**</span></span><br></pre></td></tr></table></figure>
+
+<p>访问路径：<a target="_blank" rel="noopener" href="http://localhost:8080/res/plane.png">http://localhost:8080/res/plane.png</a></p>
+<ul>
+<li>更改默认静态资源路径</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">resources:</span></span><br><span class="line">    <span class="attr">static-locations:</span> <span class="string">classpath:/haha</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="请求处理-常用参数注解使用"><a href="#请求处理-常用参数注解使用" class="headerlink" title="请求处理-常用参数注解使用"></a>请求处理-常用参数注解使用</h2><p><strong>注解：</strong></p>
+<p>@PathVariable 路径变量<br>@RequestHeader 获取请求头<br>@RequestParam 获取请求参数（指问号后的参数，url?a=1&amp;b=2）<br>@CookieValue 获取Cookie值<br>@RequestAttribute 获取request域属性<br>@RequestBody 获取请求体[POST]<br>@MatrixVariable 矩阵变量<br>@ModelAttribute</p>
+<p><strong>使用用例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParameterTestController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//  car/2/owner/zhangsan</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/car/&#123;id&#125;/owner/&#123;username&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String,Object&gt; <span class="title">getCar</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="meta">@PathVariable(&quot;username&quot;)</span> String name,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="meta">@PathVariable</span> Map&lt;String,String&gt; pv,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="meta">@RequestHeader(&quot;User-Agent&quot;)</span> String userAgent,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="meta">@RequestHeader</span> Map&lt;String,String&gt; header,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="meta">@RequestParam(&quot;age&quot;)</span> Integer age,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="meta">@RequestParam(&quot;inters&quot;)</span> List&lt;String&gt; inters,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="meta">@RequestParam</span> Map&lt;String,String&gt; params,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="meta">@CookieValue(&quot;_ga&quot;)</span> String _ga,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="meta">@CookieValue(&quot;_ga&quot;)</span> Cookie cookie)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//        map.put(&quot;id&quot;,id);</span></span><br><span class="line"><span class="comment">//        map.put(&quot;name&quot;,name);</span></span><br><span class="line"><span class="comment">//        map.put(&quot;pv&quot;,pv);</span></span><br><span class="line"><span class="comment">//        map.put(&quot;userAgent&quot;,userAgent);</span></span><br><span class="line"><span class="comment">//        map.put(&quot;headers&quot;,header);</span></span><br><span class="line">        map.put(<span class="string">&quot;age&quot;</span>,age);</span><br><span class="line">        map.put(<span class="string">&quot;inters&quot;</span>,inters);</span><br><span class="line">        map.put(<span class="string">&quot;params&quot;</span>,params);</span><br><span class="line">        map.put(<span class="string">&quot;_ga&quot;</span>,_ga);</span><br><span class="line">        System.out.println(cookie.getName()+<span class="string">&quot;===&gt;&quot;</span>+cookie.getValue());</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/save&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map <span class="title">postMethod</span><span class="params">(<span class="meta">@RequestBody</span> String content)</span></span>&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;content&quot;</span>,content);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Pekaboo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/30/Spring-Boot%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">http://example.com/2021/08/30/Spring-Boot%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Spring-Boot/">Spring Boot</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/Nathan-zhao/clouding/raw/master/20210830233642.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="Alipay"/></a><div class="post-qr-code-desc">Alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/21/Spring%E6%95%B4%E5%90%88Druid/"><img class="next-cover" src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210817114751.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Spring整合Druid</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/04/26/TZkfuYwCpMGy9qg.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pekaboo</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">32</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Nathanzhao-ED"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:2438968920@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://message/?uin=2438968920" target="_blank" title="QQ:2438968920"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://weibo.com/u/5266171796" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content"> <center>'    Sharing Code and Photos      ' </div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83"><span class="toc-number">1.</span> <span class="toc-text">核心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ConfigurationProperties%E5%92%8C-Value%E6%B3%A8%E5%85%A5%E6%AF%94%E8%BE%83"><span class="toc-number">1.1.</span> <span class="toc-text">@ConfigurationProperties和@Value注入比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PropertySource"><span class="toc-number">1.2.</span> <span class="toc-text">@PropertySource</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ImportResource"><span class="toc-number">1.3.</span> <span class="toc-text">@ImportResource</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration"><span class="toc-number">1.4.</span> <span class="toc-text">@Configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RestController"><span class="toc-number">1.5.</span> <span class="toc-text">@RestController</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Profile"><span class="toc-number">1.6.</span> <span class="toc-text">Profile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.6.1.</span> <span class="toc-text">多配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yml%E5%A4%9A%E6%96%87%E6%A1%A3%E5%9D%97"><span class="toc-number">1.6.2.</span> <span class="toc-text">yml多文档块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0"><span class="toc-number">1.6.3.</span> <span class="toc-text">命令行参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8F%82%E6%95%B0"><span class="toc-number">1.6.4.</span> <span class="toc-text">虚拟机参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.7.</span> <span class="toc-text">配置文件加载位置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.7.1.</span> <span class="toc-text">外部配置文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86"><span class="toc-number">1.8.</span> <span class="toc-text">自动配置原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9A"><span class="toc-number">1.8.1.</span> <span class="toc-text">例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conditional%E7%9A%84%E6%89%A9%E5%B1%95%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.8.2.</span> <span class="toc-text">@Conditional的扩展注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A5%E5%BF%97"><span class="toc-number">1.9.</span> <span class="toc-text">日志</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#devtools%E5%AE%9E%E7%8E%B0%E7%83%AD%E9%83%A8%E7%BD%B2"><span class="toc-number">1.10.</span> <span class="toc-text">devtools实现热部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuring-the-Annotation-Processor"><span class="toc-number">1.11.</span> <span class="toc-text">Configuring the Annotation Processor</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">2.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90"><span class="toc-number">2.1.</span> <span class="toc-text">静态资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86-%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E6%B3%A8%E8%A7%A3%E4%BD%BF%E7%94%A8"><span class="toc-number">2.2.</span> <span class="toc-text">请求处理-常用参数注解使用</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/30/Spring-Boot%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" title="Spring Boot知识点总结"><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210830233642.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Spring Boot知识点总结"/></a><div class="content"><a class="title" href="/2021/08/30/Spring-Boot%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" title="Spring Boot知识点总结">Spring Boot知识点总结</a><time datetime="2021-08-30T15:30:40.000Z" title="Created 2021-08-30 23:30:40">2021-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/21/Spring%E6%95%B4%E5%90%88Druid/" title="Spring整合Druid"><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210817114751.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Spring整合Druid"/></a><div class="content"><a class="title" href="/2021/08/21/Spring%E6%95%B4%E5%90%88Druid/" title="Spring整合Druid">Spring整合Druid</a><time datetime="2021-08-21T03:18:13.000Z" title="Created 2021-08-21 11:18:13">2021-08-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/21/Mybatis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="Mybatis配置文件"><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210813223551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mybatis配置文件"/></a><div class="content"><a class="title" href="/2021/08/21/Mybatis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="Mybatis配置文件">Mybatis配置文件</a><time datetime="2021-08-20T17:19:45.000Z" title="Created 2021-08-21 01:19:45">2021-08-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/20/SpringMVC%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/" title="SpringMVC实现转发和重定向"><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210820161626.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringMVC实现转发和重定向"/></a><div class="content"><a class="title" href="/2021/08/20/SpringMVC%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/" title="SpringMVC实现转发和重定向">SpringMVC实现转发和重定向</a><time datetime="2021-08-20T13:33:49.000Z" title="Created 2021-08-20 21:33:49">2021-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/20/%E7%AC%AC%E4%B8%80%E4%B8%AASpringMVC%E7%A8%8B%E5%BA%8F/" title="第一个SpringMVC程序"><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210820161626.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一个SpringMVC程序"/></a><div class="content"><a class="title" href="/2021/08/20/%E7%AC%AC%E4%B8%80%E4%B8%AASpringMVC%E7%A8%8B%E5%BA%8F/" title="第一个SpringMVC程序">第一个SpringMVC程序</a><time datetime="2021-08-20T08:11:33.000Z" title="Created 2021-08-20 16:11:33">2021-08-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Pekaboo  ♥  0728</div><div class="framework-info"><span>From Chengdu University of Information Technology </span><span class="footer-separator">|</span><span>My </span><a target="_blank" rel="noopener" href="https://github.com/Nathanzhao-ED/">GitHub</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">简</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'PG0yvL39zc2cGAPmItHR7crH-gzGzoHsz',
+      appKey: 'kIJBERRnHN9e6xCnBo5KE2bg',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-lrcType="1" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="255,255,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
