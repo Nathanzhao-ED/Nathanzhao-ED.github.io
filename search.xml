@@ -8,7 +8,7 @@
       <link href="2021/09/05/2021-9-4%E6%88%90%E9%83%BD%E8%BD%A6%E5%B1%95/"/>
       <url>2021/09/05/2021-9-4%E6%88%90%E9%83%BD%E8%BD%A6%E5%B1%95/</url>
       
-        <content type="html"><![CDATA[<p><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210905224435.jpg" alt="11"></p>]]></content>
+        <content type="html"><![CDATA[<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://gitee.com/Nathan-zhao/clouding/raw/master/20210905225800.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;图片替换文本&quot;</span> <span class="attr">align</span>=<span class="string">&quot;bottom&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure><p><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210905225800.jpg" alt="11"></p><img src="https://gitee.com/Nathan-zhao/clouding/raw/master/20210905225800.jpg" alt="图片替换文本" align="bottom" />]]></content>
       
       
       <categories>
